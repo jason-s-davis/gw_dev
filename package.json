@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+    "repository": {
+    "type": "git",
+    "url": "git@github.com:jason-s-davis/gw_dev.git"
+  },
     "browser": {
     "angular": "./libs/angular-index.js",
     "ngResource": "./libs/angular-resource.js",
