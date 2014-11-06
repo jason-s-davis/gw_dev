@@ -27,12 +27,10 @@
       $body.scrollspy('refresh')
     })
 
-
     // Kill links
     $('.bs-docs-container [href=#]').click(function (e) {
       e.preventDefault()
     })
-
 
     // Sidenav affixing
     setTimeout(function () {
@@ -62,15 +60,25 @@
     ;(function () {
       var stylesheetLink = $('#bs-theme-stylesheet')
       var themeBtn = $('.bs-docs-theme-toggle')
+
+      var activateTheme = function () {
+        stylesheetLink.attr('href', stylesheetLink.attr('data-href'))
+        themeBtn.text('Disable theme preview')
+        localStorage.setItem('previewTheme', true)
+      }
+
+      if (localStorage.getItem('previewTheme')) {
+        activateTheme()
+      }
+
       themeBtn.click(function () {
-        var href = stylesheetLink.attr('href');
+        var href = stylesheetLink.attr('href')
         if (!href || href.indexOf('data') === 0) {
-          stylesheetLink.attr('href', stylesheetLink.attr('data-href'))
-          themeBtn.text('Disable theme preview')
-        }
-        else {
+          activateTheme()
+        } else {
           stylesheetLink.attr('href', '')
           themeBtn.text('Preview theme')
+          localStorage.removeItem('previewTheme')
         }
       })
     })();
@@ -80,20 +88,20 @@
       selector: '[data-toggle="tooltip"]',
       container: 'body'
     })
+    $('.popover-demo').popover({
+      selector: '[data-toggle="popover"]',
+      container: 'body'
+    })
 
+    // Demos within modals
     $('.tooltip-test').tooltip()
     $('.popover-test').popover()
 
-    $('.bs-docs-navbar').tooltip({
-      selector: 'a[data-toggle="tooltip"]',
-      container: '.bs-docs-navbar .nav'
-    })
-
-    // Default popover demo
+    // Popover demos
     $('.bs-docs-popover').popover()
 
     // Button state demo
-    $('#loading-example-btn').click(function () {
+    $('#loading-example-btn').on('click', function () {
       var btn = $(this)
       btn.button('loading')
       setTimeout(function () {
@@ -101,6 +109,10 @@
       }, 3000)
     })
 
+    // Activate animated progress bar
+    $('.bs-docs-activate-animated-progressbar').on('click', function () {
+      $(this).siblings('.progress').find('.progress-bar-striped').toggleClass('active')
+    })
 
     // Config ZeroClipboard
     ZeroClipboard.config({
@@ -108,17 +120,10 @@
       hoverClass: 'btn-clipboard-hover'
     })
 
-    // Insert copy to clipboard button before .highlight or .bs-example
+    // Insert copy to clipboard button before .highlight
     $('.highlight').each(function () {
-      var highlight = $(this)
-      var previous = highlight.prev()
       var btnHtml = '<div class="zero-clipboard"><span class="btn-clipboard">Copy</span></div>'
-
-      if (previous.hasClass('bs-example')) {
-        previous.before(btnHtml.replace(/btn-clipboard/, 'btn-clipboard with-example'))
-      } else {
-        highlight.before(btnHtml)
-      }
+      $(this).before(btnHtml)
     })
     var zeroClipboard = new ZeroClipboard($('.btn-clipboard'))
     var htmlBridge = $('#global-zeroclipboard-html-bridge')

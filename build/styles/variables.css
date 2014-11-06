@@ -1,0 +1,33 @@
+/* colors */
+/* Mix-Ins and Globals */
+.spacer {
+  padding: 8px 5px 5px 5px;
+}
+.push-down {
+  margin-top: 18px;
+}
+.clickable {
+  cursor: pointer;
+}
+.inverse {
+  color: #ffffff;
+}
+.fa-1p5x {
+  font-size: 1.5em;
+  padding-left: 3px;
+}
+.fa-p5x {
+  font-size: .8em;
+}
+.left-frame {
+  max-width: 1130px;
+  /* margin: 0px -15px 0px -15px; padding: 0px 15px; */
+}
+.clearfix {
+  clear: both;
+}
+.opacity-85 {
+  -webkit-opacity: 0.85;
+  -moz-opacity: 0.85;
+  opacity: 0.85;
+}

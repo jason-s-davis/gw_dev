@@ -11,10 +11,13 @@
 window.onload = function () { // wait for load in a dumb way because B-0
   'use strict';
   var cw = '/*!\n' +
-           ' * Bootstrap v3.2.0 (http://getbootstrap.com)\n' +
+           ' * Bootstrap v3.3.0 (http://getbootstrap.com)\n' +
            ' * Copyright 2011-2014 Twitter, Inc.\n' +
            ' * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n' +
            ' */\n\n'
+
+  var supportsFile = (window.File && window.FileReader && window.FileList && window.Blob)
+  var importDropTarget = $('#import-drop-target')
 
   function showError(msg, err) {
     $('<div id="bsCustomizerAlert" class="bs-customizer-alert">' +
@@ -46,6 +49,11 @@ window.onload = function () { // wait for load in a dumb way because B-0
     }
   }
 
+  function showAlert(type, msg, insertAfter) {
+    $('<div class="alert alert-' + type + '">' + msg + '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>')
+      .insertAfter(insertAfter)
+  }
+
   function getQueryParam(key) {
     key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, '\\$&') // escape RegEx meta chars
     var match = location.search.match(new RegExp('[?&]' + key + '=([^&]+)(&|$)'))
@@ -65,6 +73,7 @@ window.onload = function () { // wait for load in a dumb way because B-0
     $.ajax({
       url: 'https://api.github.com/gists',
       type: 'POST',
+      contentType: 'application/json; charset=UTF-8',
       dataType: 'json',
       data: JSON.stringify(data)
     })
@@ -106,6 +115,24 @@ window.onload = function () { // wait for load in a dumb way because B-0
     return data
   }
 
+  function updateCustomizerFromJson(data) {
+    if (data.js) {
+      $('#plugin-section input').each(function () {
+        $(this).prop('checked', ~$.inArray(this.value, data.js))
+      })
+    }
+    if (data.css) {
+      $('#less-section input').each(function () {
+        $(this).prop('checked', ~$.inArray(this.value, data.css))
+      })
+    }
+    if (data.vars) {
+      for (var i in data.vars) {
+        $('input[data-var="' + i + '"]').val(data.vars[i])
+      }
+    }
+  }
+
   function parseUrl() {
     var id = getQueryParam('id')
 
@@ -118,21 +145,7 @@ window.onload = function () { // wait for load in a dumb way because B-0
     })
     .success(function (result) {
       var data = JSON.parse(result.files['config.json'].content)
-      if (data.js) {
-        $('#plugin-section input').each(function () {
-          $(this).prop('checked', ~$.inArray(this.value, data.js))
-        })
-      }
-      if (data.css) {
-        $('#less-section input').each(function () {
-          $(this).prop('checked', ~$.inArray(this.value, data.css))
-        })
-      }
-      if (data.vars) {
-        for (var i in data.vars) {
-          $('input[data-var="' + i + '"]').val(data.vars[i])
-        }
-      }
+      updateCustomizerFromJson(data)
     })
     .error(function (err) {
       showError('Error fetching bootstrap config file', err)
@@ -306,7 +319,19 @@ window.onload = function () { // wait for load in a dumb way because B-0
 
   function generateJS(preamble) {
     var $checked = $('#plugin-section input:checked')
-    var jqueryCheck = 'if (typeof jQuery === "undefined") { throw new Error("Bootstrap\'s JavaScript requires jQuery") }\n\n'
+    var jqueryCheck = [
+      'if (typeof jQuery === \'undefined\') {',
+      '  throw new Error(\'Bootstrap\\\'s JavaScript requires jQuery\')',
+      '}\n'
+    ].join('\n')
+    var jqueryVersionCheck = [
+      '+function ($) {',
+      '  var version = $.fn.jquery.split(\' \')[0].split(\'.\')',
+      '  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1)) {',
+      '    throw new Error(\'Bootstrap\\\'s JavaScript requires jQuery version 1.9.1 or higher\')',
+      '  }',
+      '}(jQuery);\n\n'
+    ].join('\n')
 
     if (!$checked.length) return false
 
@@ -316,13 +341,68 @@ window.onload = function () { // wait for load in a dumb way because B-0
       .join('\n')
 
     preamble = cw + preamble
-    js = jqueryCheck + js
+    js = jqueryCheck + jqueryVersionCheck + js
 
     return {
       'bootstrap.js': preamble + js,
       'bootstrap.min.js': preamble + uglify(js)
     }
   }
+
+  function removeImportAlerts() {
+    importDropTarget.nextAll('.alert').remove()
+  }
+
+  function handleConfigFileSelect(e) {
+    e.stopPropagation()
+    e.preventDefault()
+
+    var file = (e.originalEvent.hasOwnProperty('dataTransfer')) ? e.originalEvent.dataTransfer.files[0] : e.originalEvent.target.files[0]
+
+    if (!file.type.match('application/json')) {
+      return showAlert('danger', '<strong>Ruh roh.</strong> We can only read <code>.json</code> files. Please try again.', importDropTarget)
+    }
+
+    var reader = new FileReader()
+
+    reader.onload = (function () {
+      return function (e) {
+        var text = e.target.result
+
+        try {
+          var json = JSON.parse(text)
+
+          if (typeof json != 'object') {
+            throw new Error('JSON data from config file is not an object.')
+          }
+
+          updateCustomizerFromJson(json)
+          showAlert('success', '<strong>Woohoo!</strong> Your configuration was successfully uploaded. Tweak your settings, then hit Download.', importDropTarget)
+        } catch (err) {
+          return showAlert('danger', '<strong>Shucks.</strong> We can only read valid <code>.json</code> files. Please try again.', importDropTarget)
+        }
+      }
+    })(file)
+
+    reader.readAsText(file)
+  }
+
+  function handleConfigDragOver(e) {
+    e.stopPropagation()
+    e.preventDefault()
+    e.originalEvent.dataTransfer.dropEffect = 'copy'
+
+    removeImportAlerts()
+  }
+
+  if (supportsFile) {
+    importDropTarget
+      .on('dragover', handleConfigDragOver)
+      .on('drop', handleConfigFileSelect)
+  }
+
+  $('#import-file-select').on('select', handleConfigFileSelect)
+  $('#import-manual-trigger').on('click', removeImportAlerts)
 
   var inputsComponent = $('#less-section input')
   var inputsPlugin    = $('#plugin-section input')
@@ -386,7 +466,7 @@ window.onload = function () { // wait for load in a dumb way because B-0
 
       generateZip(generateCSS(preamble), generateJS(preamble), generateFonts(), configJson, function (blob) {
         $compileBtn.removeAttr('disabled')
-        saveAs(blob, 'bootstrap.zip')
+        setTimeout(function () { saveAs(blob, 'bootstrap.zip') }, 0)
       })
     })
   });
@@ -410,7 +490,8 @@ window.onload = function () { // wait for load in a dumb way because B-0
       { type: 'image/svg+xml;charset=utf-8' }
     )
     var objectUrl = url.createObjectURL(svg);
-    if (/^blob:/.exec(objectUrl) === null) {
+
+    if (/^blob:/.exec(objectUrl) === null || !supportsFile) {
       // `URL.createObjectURL` created a URL that started with something other
       // than "blob:", which means it has been polyfilled and is not supported by
       // this browser.

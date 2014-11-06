@@ -6,11 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "git@github.com:jason-s-davis/gw_dev.git"
   },
-    "browser": {
+  "browser": {
     "angular": "./libs/angular-index.js",
     "ngResource": "./libs/angular-resource.js",
     "ngSanitize": "./libs/angular-sanitize.js",
@@ -21,9 +21,7 @@
       "browserify-shim"
     ]
   },
-  "browserify-shim": {
-    
-  },
+  "browserify-shim": {},
   "devDependencies": {
     "browser-sync": "~1.3.6",
     "browserify": "~5.10.1",
@@ -35,7 +33,10 @@
     "gulp-notify": "^1.4.2",
     "gulp-util": "^3.0.0",
     "imagemin-gifsicle": "^2.0.0",
+    "jquery-browserify": "^1.8.1",
+    "jquery-mousewheel": "^3.1.12",
     "lesshat": "^3.0.2",
+    "malihu-custom-scrollbar-plugin": "^3.0.5",
     "pretty-hrtime": "~0.2.1",
     "require-dir": "^0.1.0",
     "vinyl-source-stream": "~0.1.1",

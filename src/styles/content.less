@@ -1,0 +1,85 @@
+@import "variables.less";
+
+@toppad:	190px;
+
+#MainContent { position: absolute; left:0; top: 0; z-index:10; height: 100%; width: 100%; max-width: 1200px; }
+
+#MainHolder { background-color: @gw-white; border-right: 1px solid @gw-dark-grey; padding-top: @toppad; width: 100%; height: 100% }
+
+
+/*  Side Nav */
+#SideNav { background-color: @gw-black; height: 100%; z-index: 20; position: absolute; top: 0px; left: 0px; width: auto; 
+	padding-top: @toppad; }
+#MainNav { width: 160px; float: left; position: relative; }	
+#SideNav ul { list-style: none; padding: 0px 10px;  }
+#SideNav ul li { padding: 5px 0px; color: @gw-white; }
+#SideNav a { color: @gw-white }
+#MenuButton { display: block; }
+.subnav { display: none; }
+.down-arrow { padding: 4px 5px 0px 0px; }
+#nav-search { border-top: 1px solid @gw-dark-grey; border-bottom: 1px solid @gw-dark-grey; margin-bottom: 5px; }
+#nav-search input { background-color: @gw-black; border: none; color: @gw-white}
+#nav-search button { background-color: @gw-black; border: none;}
+
+#SideSubNav { background-color: @gw-black; height: 100%; z-index: 20; position: relative; float: right; width: 160px;}
+#SideSubNav a { color: @gw-white }
+.subnav { list-style: none; }
+
+
+/* Article Area */
+#ArticleHolder { padding-top: 30px; width: 100%; height: 100%; position: absolute; top: 0px; z-index: 10; padding-top: @toppad }
+.story-content-placeholder { height: auto; overflow: auto; }
+
+/* Side Bar */
+#SideBar { height: 100%; width: 100%; max-width: 320px;z-index: 20; overflow-y: auto; position: absolute; top: 0px;  padding-top: @toppad}
+#SideBar .nav-tabs { border: none }
+#SideBar .nav-tabs li { width: 33%; }
+#SideBar .nav-tabs li a { background-color: @gw-light-grey; color: @gw-darkest-grey; border: none; border-bottom: 7px solid @gw-dark-grey; font-size: .8em; padding: 8px 5px 1px 5px; border-radius: 0px }
+#SideBar .nav-tabs .active a { background-color: @gw-blue; color: @gw-white; border: none; border-bottom: 7px solid @gw-blue; }
+#SideBar .nav-tabs .active a:hover { border: none; border-bottom: 7px solid @gw-blue;}
+#SideBar .nav-tabs a:hover { border: none; border-bottom: 7px solid @gw-dark-grey;}
+#SideBar .nav-tabs li:nth-child(1) a { border-radius: 8px 0px 0px 0px }
+#SideBar .nav-tabs li:nth-child(3) a { border-radius: 0px 8px 0px 0px }
+#TabsContent { border: 2px solid @gw-light-grey; border-top: none; margin-bottom: 15px; margin-right: 5px; padding: 15px; height: 40%; overflow: hidden;}
+.TabPanel { height: 100%; overflow: hidden; }
+.news-tab span { color: @gw-blue; font-size: 1em; font-weight: bold; }
+.news-tab ul { margin-bottom: 15px; list-style: none; padding-left: 0px }
+.news-tab li:before {
+  content: '\f054'; /* FontAwesome char code inside the '' */
+  font-family: FontAwesome; /* FontAwesome or whatever */
+  display: inline-block;
+  color: @gw-red;
+  width: 20px; /* same as padding-left set on li */
+  margin-left: 20 px; /* same as padding-left set on li */
+  font-size: .75em;
+}​
+.news-tab li { border-bottom: 1px solid @gw-light-grey; padding: 10px 0px; line-height: 1em }
+
+/* Large desktop */
+@media (min-width: 1200px) {
+	#ArticleHolder { left: 180px; width: 600px; z-index: 10 }
+	#SideBar { left: 800px; }
+	#SideBarButton, #SideNavButton { display: block }
+	#HeaderLogo { margin-left: 0px; }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 1200px) { 
+	#SideBar, #SideNav, #SideSubNav{ display: none }
+	#SideBarButton, #SideNavButton { display: block }
+	#HeaderLogo { margin-left: 50px; }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	#SideBar, #SideNav, #SideSubNav { display: none }
+	#SideBarButton, #SideNavButton { display: block }
+	#HeaderLogo { margin-left: 50px; }
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	#SideBar, #SideNav, #SideSubNav { display: none }
+	#SideBarButton, #SideNavButton { display: block }
+	#HeaderLogo { margin-left: 50px; }
+}

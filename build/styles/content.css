@@ -1,0 +1,277 @@
+/* colors */
+/* Mix-Ins and Globals */
+.spacer {
+  padding: 8px 5px 5px 5px;
+}
+.push-down {
+  margin-top: 18px;
+}
+.clickable {
+  cursor: pointer;
+}
+.inverse {
+  color: #ffffff;
+}
+.fa-1p5x {
+  font-size: 1.5em;
+  padding-left: 3px;
+}
+.fa-p5x {
+  font-size: .8em;
+}
+.left-frame {
+  max-width: 1130px;
+  /* margin: 0px -15px 0px -15px; padding: 0px 15px; */
+}
+.clearfix {
+  clear: both;
+}
+.opacity-85 {
+  -webkit-opacity: 0.85;
+  -moz-opacity: 0.85;
+  opacity: 0.85;
+}
+#MainContent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+}
+#MainHolder {
+  background-color: #ffffff;
+  border-right: 1px solid #b0b0b0;
+  padding-top: 190px;
+  width: 100%;
+  height: 100%;
+}
+/*  Side Nav */
+#SideNav {
+  background-color: #000000;
+  height: 100%;
+  z-index: 20;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: auto;
+  padding-top: 190px;
+}
+#MainNav {
+  width: 160px;
+  float: left;
+  position: relative;
+}
+#SideNav ul {
+  list-style: none;
+  padding: 0px 10px;
+}
+#SideNav ul li {
+  padding: 5px 0px;
+  color: #ffffff;
+}
+#SideNav a {
+  color: #ffffff;
+}
+#MenuButton {
+  display: block;
+}
+.subnav {
+  display: none;
+}
+.down-arrow {
+  padding: 4px 5px 0px 0px;
+}
+#nav-search {
+  border-top: 1px solid #b0b0b0;
+  border-bottom: 1px solid #b0b0b0;
+  margin-bottom: 5px;
+}
+#nav-search input {
+  background-color: #000000;
+  border: none;
+  color: #ffffff;
+}
+#nav-search button {
+  background-color: #000000;
+  border: none;
+}
+#SideSubNav {
+  background-color: #000000;
+  height: 100%;
+  z-index: 20;
+  position: relative;
+  float: right;
+  width: 160px;
+}
+#SideSubNav a {
+  color: #ffffff;
+}
+.subnav {
+  list-style: none;
+}
+/* Article Area */
+#ArticleHolder {
+  padding-top: 30px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  z-index: 10;
+  padding-top: 190px;
+}
+.story-content-placeholder {
+  height: auto;
+  overflow: auto;
+}
+/* Side Bar */
+#SideBar {
+  height: 100%;
+  width: 100%;
+  max-width: 320px;
+  z-index: 20;
+  overflow-y: auto;
+  position: absolute;
+  top: 0px;
+  padding-top: 190px;
+}
+#SideBar .nav-tabs {
+  border: none;
+}
+#SideBar .nav-tabs li {
+  width: 33%;
+}
+#SideBar .nav-tabs li a {
+  background-color: #d9d9d9;
+  color: #211e1f;
+  border: none;
+  border-bottom: 7px solid #b0b0b0;
+  font-size: .8em;
+  padding: 8px 5px 1px 5px;
+  border-radius: 0px;
+}
+#SideBar .nav-tabs .active a {
+  background-color: #02b2ed;
+  color: #ffffff;
+  border: none;
+  border-bottom: 7px solid #02b2ed;
+}
+#SideBar .nav-tabs .active a:hover {
+  border: none;
+  border-bottom: 7px solid #02b2ed;
+}
+#SideBar .nav-tabs a:hover {
+  border: none;
+  border-bottom: 7px solid #b0b0b0;
+}
+#SideBar .nav-tabs li:nth-child(1) a {
+  border-radius: 8px 0px 0px 0px;
+}
+#SideBar .nav-tabs li:nth-child(3) a {
+  border-radius: 0px 8px 0px 0px;
+}
+#TabsContent {
+  border: 2px solid #d9d9d9;
+  border-top: none;
+  margin-bottom: 15px;
+  margin-right: 5px;
+  padding: 15px;
+  height: 40%;
+  overflow: hidden;
+}
+.TabPanel {
+  height: 100%;
+  overflow: hidden;
+}
+.news-tab span {
+  color: #02b2ed;
+  font-size: 1em;
+  font-weight: bold;
+}
+.news-tab ul {
+  margin-bottom: 15px;
+  list-style: none;
+  padding-left: 0px;
+}
+.news-tab li:before {
+  content: '\f054';
+  /* FontAwesome char code inside the '' */
+  font-family: FontAwesome;
+  /* FontAwesome or whatever */
+  display: inline-block;
+  color: #eb1c23;
+  width: 20px;
+  /* same as padding-left set on li */
+  margin-left: 20 px;
+  /* same as padding-left set on li */
+  font-size: .75em;
+}
+ .news-tab li {
+  border-bottom: 1px solid #d9d9d9;
+  padding: 10px 0px;
+  line-height: 1em;
+}
+/* Large desktop */
+@media (min-width: 1200px) {
+  #ArticleHolder {
+    left: 180px;
+    width: 600px;
+    z-index: 10;
+  }
+  #SideBar {
+    left: 800px;
+  }
+  #SideBarButton,
+  #SideNavButton {
+    display: block;
+  }
+  #HeaderLogo {
+    margin-left: 0px;
+  }
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 1200px) {
+  #SideBar,
+  #SideNav,
+  #SideSubNav {
+    display: none;
+  }
+  #SideBarButton,
+  #SideNavButton {
+    display: block;
+  }
+  #HeaderLogo {
+    margin-left: 50px;
+  }
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  #SideBar,
+  #SideNav,
+  #SideSubNav {
+    display: none;
+  }
+  #SideBarButton,
+  #SideNavButton {
+    display: block;
+  }
+  #HeaderLogo {
+    margin-left: 50px;
+  }
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  #SideBar,
+  #SideNav,
+  #SideSubNav {
+    display: none;
+  }
+  #SideBarButton,
+  #SideNavButton {
+    display: block;
+  }
+  #HeaderLogo {
+    margin-left: 50px;
+  }
+}
