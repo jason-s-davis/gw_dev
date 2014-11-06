@@ -21,10 +21,12 @@
 }
 .left-frame {
   max-width: 1130px;
-  /* margin: 0px -15px 0px -15px; padding: 0px 15px; */
 }
 .clearfix {
   clear: both;
+}
+.force-show {
+  display: block !important;
 }
 .opacity-85 {
   -webkit-opacity: 0.85;

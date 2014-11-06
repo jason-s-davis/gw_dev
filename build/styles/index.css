@@ -9484,7 +9484,6 @@ yx-axis
 }
 .left-frame {
   max-width: 1130px;
-  /* margin: 0px -15px 0px -15px; padding: 0px 15px; */
 }
 .clearfix,
 .dl-horizontal dd,
@@ -9502,6 +9501,9 @@ yx-axis
 .panel-body,
 .modal-footer {
   clear: both;
+}
+.force-show {
+  display: block !important;
 }
 .opacity-85 {
   filter: alpha(opacity=85);
@@ -9759,6 +9761,10 @@ header {
   #HeaderLogo {
     margin-left: 0px;
   }
+  .left-frame {
+    max-width: 1130px;
+    /* margin: 0px -15px 0px -15px; padding: 0px 15px; */
+  }
 }
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 1200px) {
@@ -9773,6 +9779,13 @@ header {
   }
   #HeaderLogo {
     margin-left: 50px;
+  }
+  .left-frame {
+    max-width: 850px;
+    /* margin: 0px -15px 0px -15px; padding: 0px 15px; */
+  }
+  #ArticleHolder {
+    width: 768px;
   }
 }
 /* Landscape phone to portrait tablet */
@@ -9789,6 +9802,18 @@ header {
   #HeaderLogo {
     margin-left: 50px;
   }
+  .left-frame {
+    max-width: 100%;
+    /* margin: 0px -15px 0px -15px; padding: 0px 15px; */
+  }
+  #ArticleHolder {
+    width: 100%;
+  }
+  #ArticleHolder,
+  #SideBar,
+  #SideNav {
+    padding-top: 150px;
+  }
 }
 /* Landscape phones and down */
 @media (max-width: 480px) {
@@ -9803,5 +9828,17 @@ header {
   }
   #HeaderLogo {
     margin-left: 50px;
+  }
+  .left-frame {
+    max-width: 100%;
+    /* margin: 0px -15px 0px -15px; padding: 0px 15px; */
+  }
+  #ArticleHolder {
+    width: 100%;
+  }
+  #ArticleHolder,
+  #SideBar,
+  #SideNav {
+    padding-top: 150px;
   }
 }

@@ -1,6 +1,7 @@
 @import "variables.less";
 
 @toppad:	190px;
+@toppad_mobile:	150px;
 
 #MainContent { position: absolute; left:0; top: 0; z-index:10; height: 100%; width: 100%; max-width: 1200px; }
 
@@ -61,6 +62,7 @@
 	#SideBar { left: 800px; }
 	#SideBarButton, #SideNavButton { display: block }
 	#HeaderLogo { margin-left: 0px; }
+	.left-frame { max-width: 1130px; /* margin: 0px -15px 0px -15px; padding: 0px 15px; */ }
 }
 
 /* Portrait tablet to landscape and desktop */
@@ -68,6 +70,8 @@
 	#SideBar, #SideNav, #SideSubNav{ display: none }
 	#SideBarButton, #SideNavButton { display: block }
 	#HeaderLogo { margin-left: 50px; }
+	.left-frame { max-width: 850px; /* margin: 0px -15px 0px -15px; padding: 0px 15px; */ }
+	#ArticleHolder { width: 768px }
 }
 
 /* Landscape phone to portrait tablet */
@@ -75,6 +79,9 @@
 	#SideBar, #SideNav, #SideSubNav { display: none }
 	#SideBarButton, #SideNavButton { display: block }
 	#HeaderLogo { margin-left: 50px; }
+	.left-frame { max-width: 100%; /* margin: 0px -15px 0px -15px; padding: 0px 15px; */ }
+	#ArticleHolder { width: 100%; }
+	#ArticleHolder, #SideBar, #SideNav { padding-top: @toppad_mobile }
 }
  
 /* Landscape phones and down */
@@ -82,4 +89,7 @@
 	#SideBar, #SideNav, #SideSubNav { display: none }
 	#SideBarButton, #SideNavButton { display: block }
 	#HeaderLogo { margin-left: 50px; }
+	.left-frame { max-width: 100%; /* margin: 0px -15px 0px -15px; padding: 0px 15px; */ }
+	#ArticleHolder { width: 100%; }
+	#ArticleHolder, #SideBar, #SideNav { padding-top: @toppad_mobile }
 }
