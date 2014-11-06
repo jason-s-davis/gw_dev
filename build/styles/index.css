@@ -9531,7 +9531,7 @@ header {
   padding-top: 15px;
 }
 #HeaderLogo {
-  background: url('/img/Golfweek_WHT.png');
+  background: url('../img/Golfweek_WHT.png');
   width: 100%;
   height: 200px;
   background-repeat: no-repeat;
