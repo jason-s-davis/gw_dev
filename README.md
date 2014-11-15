@@ -15,8 +15,8 @@
 * you can view your work with auto reload at localhost:3000
 
 ### TODO
-[ ] Add Karma / Jasmine Tests - for JS functionality testing
-[ ] Add CasperJS Tests? - for user action testing
-[ ] PageSpeed / Phantomas / Performance Budget
+- [ ] Add Karma / Jasmine Tests - for JS functionality testing
+- [ ] Add CasperJS Tests? - for user action testing
+- [ ] PageSpeed / Phantomas / Performance Budget
 
 [further reading](http://rupl.github.io/frontend-testing/#/)
