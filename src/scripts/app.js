@@ -98,11 +98,23 @@ $(window).scroll(function(){
 
 $( ".shownav" ).click(function() {
 	if ($('#SideNav').css('display') == 'block') {
+		$('.mask').remove();
 		$('#SideNav').hide();
 	} else {
+		$(document).append("<div class='mask'></div>");
 		$('#SideNav').show();
 	}
 });
+
+
+/* slide menu left */
+	toggleSlideLeft.addEventListener( "click", function(){
+		classie.add( body, "sml-open" );
+		
+		activeNav = "sml-open";
+	} );
+
+
 
 $(document).ready(function() {
 	screen_size = $(window).width();

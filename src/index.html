@@ -75,10 +75,10 @@
 <header id="HeaderContent">	
 	<div class="left-frame">
 		<nav id="NavPill">
-			<i class="fa fa-upload fa-1p5x inverse spacer clickable"></i>
-			<i class="fa fa-sort-alpha-asc fa-1p5x inverse spacer clickable"></i>
-			<i id="SearchNavButton" class="fa fa-search fa-1p5x inverse spacer clickable shownav"></i>
 			<i id="SideNavButton" class="fa fa-reorder fa-1p5x inverse spacer clickable shownav"></i>
+			<i id="SearchNavButton" class="fa fa-search fa-1p5x inverse spacer clickable shownav"></i>
+			<i class="fa fa-sort-alpha-asc fa-1p5x inverse spacer clickable"></i>
+			<i class="fa fa-upload fa-1p5x inverse spacer clickable"></i>
 		</nav>
 		<div id="HeaderAd" role="banner" align="center" class="row">
 			<div class="col-xs-12">
@@ -91,7 +91,7 @@
 			</div>
 			<div id="HeaderSocial" class="visible-sm visible-md visible-lg col-xs-12 col-sm-6">
 				<div class="pull-right spacer">
-					<a href=""><div id="HeaderSubscribe"><i class="fa fa-arrow-circle-right fa-1p5x"></i><span>SUBSCRIBE</span></div></a>
+					<a href=""><div id="HeaderSubscribe"><i class="fa fa-arrow-circle-right sub-button"></i><span>SUBSCRIBE</span></div></a>
 					<i class="fa fa-instagram fa-2x inverse spacer clickable"></i>
 					<i class="fa fa-twitter fa-2x inverse spacer clickable"></i>
 					<i class="fa fa-facebook fa-2x inverse spacer clickable"></i>
@@ -102,106 +102,74 @@
 	</div>
 </header>
 
+<nav id="SideNav" role="navigation" style="display: none">
+	<subnav id="SideSubNav" role="navigation">
+		<ul id="pga-sub-nav" class="subnav" style="display: none">
+			<li><strong>PGA Tour</strong></li>
+			<li><a href="">News</a></li>
+			<li><a href="">Scores</a></li>
+			<li><a href="">Rankings</a></li>
+		</ul>
+
+		<ul id="lpga-sub-nav" class="subnav" style="display: none">
+			<li><strong>LPGA</strong></li>
+			<li><a href="">News</a></li>
+			<li><a href="">Scores</a></li>
+			<li><a href="">Rankings</a></li>
+		</ul>
+
+		<ul id="euro-sub-nav" class="subnav" style="display: none">
+			<li><strong>European Tour</strong></li>
+			<li><a href="">News</a></li>
+			<li><a href="">Scores</a></li>
+			<li><a href="">Rankings</a></li>
+		</ul>
+
+		<ul id="chmp-sub-nav" class="subnav" style="display: none">
+			<li><strong>Champions Tour</strong></li>
+			<li><a href="">News</a></li>
+			<li><a href="">Scores</a></li>
+			<li><a href="">Rankings</a></li>
+		</ul>
+	</subnav>
+	<div id="MainNav">
+		<form action="http://golfweek.com/searches/" method="get" target="_top">
+		    <div class="input-group" id="nav-search">
+		      <input type="text" class="form-control" placeholder="SEARCH">
+		      <span class="input-group-btn">
+		        <button class="btn btn-default" type="submit"><i class="fa fa-search inverse clickable"></i></button>
+		      </span>
+		    </div><!-- /input-group -->
+        </form>
+		<ul>
+			<li targ="pga-sub"><a href="">PGA TOUR</a></li>
+			<li targ="lpga-sub"><a href="">LPGA TOUR</a></li>
+			<li targ="euro-sub"><a href="">EUROPEANS</a></li>
+			<li targ="chmp-sub"><a href="">CHAMPIONS</a></li>
+			<li targ="web-sub"><a href="">WEB.COM TOUR</a></li>
+			<li><a href="">FORECADDIE</a></li>
+			<li><a href="">LIVE SCORES</a></li>
+			<li targ="scoreboard-sub"><a href="">SCOREBOARD</a></li>
+			<li targ="college-sub"><a href="">COLLEGE</a></li>
+			<li targ="amateur-sub"><a href="">AMATEUR</a></li>
+			<li targ="junior-sub"><a href="">JUNIOR</a></li>
+			<li targ="recruiting-sub"><a href="">RECRUITING</a></li>
+			<li targ="equipment-sub"><a href="">EQUIPMENT</a></li>
+			<li targ="instruction-sub"><a href="">INSTRUCTION</a></li>
+			<li targ="courses-sub"><a href="">GOLF COURSES</a></li>
+			<li targ="videos-sub"><a href="">VIDEOS</a></li>
+			<li targ="events-sub"><a href="">EVENTS</a></li>
+			<li targ="newsletters-sub"><a href="">NEWSLETTER</a></li>
+			<li><a href="">E-MAGAZINES</a></li>
+			<li><a href="">STAFF</a></li>
+		</ul>
+	</div>
+</nav>
+
+
 <main role="main" id="MainContent" class="left-frame floater">
 	<div class="wheel-o-content">
-		<nav id="SideNav" role="navigation" style="display: none">
-	    	<subnav id="SideSubNav" role="navigation">
-				<ul id="pga-sub-nav" class="subnav">
-					<li><strong>PGA Tour</strong></li>
-					<li><a href="">News</a></li>
-					<li><a href="">Scores</a></li>
-					<li><a href="">Rankings</a></li>
-				</ul>
-
-				<ul id="lpga-sub-nav" class="subnav" >
-					<li><strong>LPGA</strong></li>
-					<li><a href="">News</a></li>
-					<li><a href="">Scores</a></li>
-					<li><a href="">Rankings</a></li>
-				</ul>
-
-				<ul id="euro-sub-nav" class="subnav">
-					<li><strong>European Tour</strong></li>
-					<li><a href="">News</a></li>
-					<li><a href="">Scores</a></li>
-					<li><a href="">Rankings</a></li>
-				</ul>
-
-				<ul id="chmp-sub-nav" class="subnav">
-					<li><strong>Champions Tour</strong></li>
-					<li><a href="">News</a></li>
-					<li><a href="">Scores</a></li>
-					<li><a href="">Rankings</a></li>
-				</ul>
-			</subnav>
-	    	<div id="MainNav">
-	    		<form action="http://golfweek.com/searches/" method="get" target="_top">
-				    <div class="input-group" id="nav-search">
-				      <input type="text" class="form-control" placeholder="SEARCH">
-				      <span class="input-group-btn">
-				        <button class="btn btn-default" type="submit"><i class="fa fa-search inverse clickable"></i></button>
-				      </span>
-				    </div><!-- /input-group -->
-	            </form>
-				<ul>
-					<li targ="pga-sub">
-						<i targ="pga-sub" class="fa fa-chevron-right inverse pull-right right-arrow"></i>
-						<a href="">PGA TOUR</a>
-					</li>
-					<li targ="lpga-sub"><i targ="lpga-sub" class="fa fa-chevron-right inverse pull-right right-arrow"></i>
-						<a href="">LPGA TOUR</a>
-					</li>
-					<li targ="euro-sub"><i targ="euro-sub" class="fa fa-chevron-right inverse pull-right right-arrow"></i>
-						<a href="">EUROPEANS</a>
-					</li>
-					<li targ="chmp-sub"><i targ="chmp-sub" class="fa fa-chevron-right inverse pull-right right-arrow"></i>
-						<a href="">CHAMPIONS</a>
-					</li>
-					<li targ="web-sub"><i targ="web-sub" class="fa fa-chevron-right inverse pull-right right-arrow"></i>
-						<a href="">WEB.COM TOUR</a>
-					</li>
-					<li><a href="">FORECADDIE</a></li>
-					<li targ="scores-sub"><i targ="scores-sub" class="fa fa-chevron-right inverse pull-right right-arrow"></i>
-						<a href="">LIVE SCORES</a>
-					</li>
-					<li targ="scoreboard-sub"><i targ="scoreboard-sub" class="fa fa-chevron-right inverse pull-right right-arrow"></i>
-						<a href="">SCOREBOARD</a>
-					</li>
-					<li targ="college-sub"><i targ="college-sub" class="fa fa-chevron-right inverse pull-right right-arrow" ></i>
-						<a href="">COLLEGE</a>
-					</li>
-					<li targ="amateur-sub"><i targ="amateur-sub" class="fa fa-chevron-right inverse pull-right right-arrow"></i>
-						<a href="">AMATEUR</a>
-					</li>
-					<li targ="junior-sub"><i targ="junior-sub" class="fa fa-chevron-right inverse pull-right right-arrow"></i>
-						<a href="">JUNIOR</a>
-					</li>
-					<li targ="recruiting-sub"><i targ="recruiting-sub" class="fa fa-chevron-right inverse pull-right right-arrow"></i>
-						<a href="">RECRUITING</a>
-					</li>
-					<li targ="equipment-sub"><i targ="equipment-sub" class="fa fa-chevron-right inverse pull-right right-arrow"></i>
-						<a href="">EQUIPMENT</a>
-					</li>
-					<li targ="instruction-sub"><i targ="instruction-sub" class="fa fa-chevron-right inverse pull-right right-arrow"></i>
-						<a href="">INSTRUCTION</a>
-					</li>
-					<li targ="courses-sub"><i targ="courses-sub" class="fa fa-chevron-right inverse pull-right right-arrow"></i>
-						<a href="">GOLF COURSES</a>
-					</li>
-					<li targ="videos-sub"><i targ="videos-sub" class="fa fa-chevron-right inverse pull-right right-arrow"></i>
-						<a href="">VIDEOS</a>
-					</li>
-					<li targ="events-sub"><i targ="events-sub" class="fa fa-chevron-right inverse pull-right right-arrow"></i>
-						<a href="">EVENTS</a>
-					</li>
-					<li targ="newsletters-sub"><i targ="newsletters-sub" class="fa fa-chevron-right inverse pull-right right-arrow"></i>
-						<a href="">NEWSLETTER</a>
-					</li>
-					<li><a href="">E-MAGAZINES</a></li>
-					<li><a href="">STAFF</a></li>
-				</ul>
-			</div>
-		</nav>
+		
 		<article id="ArticleHolder" role="article"  class="container">
 			<div class="row">
 				<div class="col-xs-12">

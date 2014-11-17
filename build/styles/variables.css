@@ -1,5 +1,14 @@
 /* colors */
 /* Mix-Ins and Globals */
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 60;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
 .spacer {
   padding: 8px 5px 5px 5px;
 }
@@ -14,6 +23,10 @@
 }
 .fa-1p5x {
   font-size: 1.5em;
+  padding-left: 3px;
+}
+.fa-1p5x {
+  font-size: 1.3em;
   padding-left: 3px;
 }
 .fa-p5x {
