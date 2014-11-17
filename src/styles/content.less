@@ -1,38 +1,80 @@
 @import "variables.less";
 
-@toppad:	190px;
-@toppad_mobile:	150px;
 
-#MainContent { position: absolute; left:0; top: 0; z-index:10; height: 100%; width: 100%; max-width: 1200px; }
+body { height: 100%; width: 100%; }
 
-#MainHolder { background-color: @gw-white; border-right: 1px solid @gw-dark-grey; padding-top: @toppad; width: 100%; height: 100% }
+/* Header Area */
+
+#NavPill { background-color: @gw-black;  max-width: 320px; position: fixed; top: 177px; left: 0px; width: 160px; text-align: center; }
+
+#HeaderContent { background-color: @gw-black; border-bottom: 12px solid @gw-red; width: 100%; position: fixed; top: 0px; left: 0px; z-index: 50}
+
+#HeaderAd { padding-top: @gw-section-spacer }
+
+#HeaderBar { padding-top: @gw-section-spacer }
+
+#HeaderLogo { 
+	background: url('../img/Golfweek_WHT.png'); 
+	width: 100%; 
+	height: 200px; 
+	background-repeat: no-repeat; 
+	max-height: 55px; 
+	max-width: 300px; 
+	background-size: cover; 
+}
+#HeaderSubscribe { 
+	color: @gw-white; 
+	float: left;
+	border: 1px solid @gw-white;
+	.border-radius(30px);
+	padding: 5px;
+	margin: 3px 8px 0px 0px;
+
+	span { 	font-size: 1.1em;	float: right; 	padding: 0px 5px 0px 5px }
+}
+
+
+/* CONTENT AREA */
+
+#MainContent { height: 100%; width: 100%; overflow: hidden; background-color: @gw-white; padding-top: @header_height_offset }
 
 
 /*  Side Nav */
-#SideNav { background-color: @gw-black; height: 100%; z-index: 20; position: absolute; top: 0px; left: 0px; width: auto; 
-	padding-top: @toppad; }
-#MainNav { width: 160px; float: left; position: relative; }	
-#SideNav ul { list-style: none; padding: 0px 10px;  }
-#SideNav ul li { padding: 5px 0px; color: @gw-white; }
-#SideNav a { color: @gw-white }
-#MenuButton { display: block; }
-.subnav { display: none; }
-.down-arrow { padding: 4px 5px 0px 0px; }
-#nav-search { border-top: 1px solid @gw-dark-grey; border-bottom: 1px solid @gw-dark-grey; margin-bottom: 5px; }
-#nav-search input { background-color: @gw-black; border: none; color: @gw-white}
-#nav-search button { background-color: @gw-black; border: none;}
 
-#SideSubNav { background-color: @gw-black; height: 100%; z-index: 20; position: relative; float: right; width: 160px;}
-#SideSubNav a { color: @gw-white }
+#SideNav { 
+	background-color: @gw-black; 
+	height: 100%;  
+	max-width: 320px; 
+	padding-top: 40px; 
+	float: left;
+	ul { list-style: none; padding: 0px 10px;}
+	ul li { padding: 5px 0px; color: @gw-white;}
+	a { color: @gw-white }
+	.right-arrow { padding: 4px 5px 0px 0px; }
+}
+
+#SideSubNav { background-color: @gw-black; float: right; width: 160px;
+	a { color: @gw-white }
+}
+
+#MainNav { width: 160px; float: left; }
+
 .subnav { list-style: none; }
+
+#nav-search { 
+	border-top: 1px solid @gw-dark-grey;
+	border-bottom: 1px solid @gw-dark-grey; 
+	margin-bottom: 5px;
+	input { background-color: @gw-black; border: none; color: @gw-white}
+	button { background-color: @gw-black; border: none;}
+}
 
 
 /* Article Area */
-#ArticleHolder { padding-top: 30px; width: 100%; height: 100%; position: absolute; top: 0px; z-index: 10; padding-top: @toppad }
-.story-content-placeholder { height: auto; overflow: auto; }
+#ArticleHolder { float: left; padding: 50px 30px; width: 100%; max-width: 770px; }
 
 /* Side Bar */
-#SideBar { height: 100%; width: 100%; max-width: 320px;z-index: 20; overflow-y: auto; position: absolute; top: 0px;  padding-top: @toppad}
+#SideBar { height: 450px; padding-top: 20px; width: 100%; max-width: 320px; float: left; margin: @gw-section-spacer; }
 #SideBar .nav-tabs { border: none }
 #SideBar .nav-tabs li { width: 33%; }
 #SideBar .nav-tabs li a { background-color: @gw-light-grey; color: @gw-darkest-grey; border: none; border-bottom: 7px solid @gw-dark-grey; font-size: .8em; padding: 8px 5px 1px 5px; border-radius: 0px }
@@ -58,38 +100,22 @@
 
 /* Large desktop */
 @media (min-width: 1200px) {
-	#ArticleHolder { left: 180px; width: 600px; z-index: 10 }
-	#SideBar { left: 800px; }
-	#SideBarButton, #SideNavButton { display: block }
-	#HeaderLogo { margin-left: 0px; }
 	.left-frame { max-width: 1130px; /* margin: 0px -15px 0px -15px; padding: 0px 15px; */ }
 }
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 1200px) { 
-	#SideBar, #SideNav, #SideSubNav{ display: none }
-	#SideBarButton, #SideNavButton { display: block }
-	#HeaderLogo { margin-left: 50px; }
 	.left-frame { max-width: 850px; /* margin: 0px -15px 0px -15px; padding: 0px 15px; */ }
-	#ArticleHolder { width: 768px }
+	#ArticleHolder { max-width: 500px }
 }
 
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
-	#SideBar, #SideNav, #SideSubNav { display: none }
-	#SideBarButton, #SideNavButton { display: block }
-	#HeaderLogo { margin-left: 50px; }
+@media (max-width: 867px) {
 	.left-frame { max-width: 100%; /* margin: 0px -15px 0px -15px; padding: 0px 15px; */ }
-	#ArticleHolder { width: 100%; }
-	#ArticleHolder, #SideBar, #SideNav { padding-top: @toppad_mobile }
+	#ArticleHolder { max-width: 100% }
 }
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
-	#SideBar, #SideNav, #SideSubNav { display: none }
-	#SideBarButton, #SideNavButton { display: block }
-	#HeaderLogo { margin-left: 50px; }
 	.left-frame { max-width: 100%; /* margin: 0px -15px 0px -15px; padding: 0px 15px; */ }
-	#ArticleHolder { width: 100%; }
-	#ArticleHolder, #SideBar, #SideNav { padding-top: @toppad_mobile }
 }

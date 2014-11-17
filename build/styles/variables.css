@@ -19,17 +19,3 @@
 .fa-p5x {
   font-size: .8em;
 }
-.left-frame {
-  max-width: 1130px;
-}
-.clearfix {
-  clear: both;
-}
-.force-show {
-  display: block !important;
-}
-.opacity-85 {
-  -webkit-opacity: 0.85;
-  -moz-opacity: 0.85;
-  opacity: 0.85;
-}

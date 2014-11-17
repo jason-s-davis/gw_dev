@@ -19,51 +19,77 @@
 .fa-p5x {
   font-size: .8em;
 }
-.left-frame {
-  max-width: 1130px;
+body {
+  height: 100%;
+  width: 100%;
 }
-.clearfix {
-  clear: both;
+/* Header Area */
+#NavPill {
+  background-color: #000000;
+  max-width: 320px;
+  position: fixed;
+  top: 177px;
+  left: 0px;
+  width: 160px;
+  text-align: center;
 }
-.force-show {
-  display: block !important;
+#HeaderContent {
+  background-color: #000000;
+  border-bottom: 12px solid #eb1c23;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 50;
 }
-.opacity-85 {
-  -webkit-opacity: 0.85;
-  -moz-opacity: 0.85;
-  opacity: 0.85;
+#HeaderAd {
+  padding-top: 10px;
 }
+#HeaderBar {
+  padding-top: 10px;
+}
+#HeaderLogo {
+  background: url('../img/Golfweek_WHT.png');
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  max-height: 55px;
+  max-width: 300px;
+  background-size: cover;
+}
+#HeaderSubscribe {
+  color: #ffffff;
+  float: left;
+  border: 1px solid #ffffff;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 5px;
+  margin: 3px 8px 0px 0px;
+}
+#HeaderSubscribe span {
+  font-size: 1.1em;
+  float: right;
+  padding: 0px 5px 0px 5px;
+}
+/* CONTENT AREA */
 #MainContent {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 10;
   height: 100%;
   width: 100%;
-  max-width: 1200px;
-}
-#MainHolder {
+  overflow: hidden;
   background-color: #ffffff;
-  border-right: 1px solid #b0b0b0;
-  padding-top: 190px;
-  width: 100%;
-  height: 100%;
+  padding-top: 177px;
 }
 /*  Side Nav */
 #SideNav {
   background-color: #000000;
   height: 100%;
-  z-index: 20;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: auto;
-  padding-top: 190px;
-}
-#MainNav {
-  width: 160px;
+  max-width: 320px;
+  padding-top: 40px;
   float: left;
-  position: relative;
 }
 #SideNav ul {
   list-style: none;
@@ -76,14 +102,23 @@
 #SideNav a {
   color: #ffffff;
 }
-#MenuButton {
-  display: block;
+#SideNav .right-arrow {
+  padding: 4px 5px 0px 0px;
+}
+#SideSubNav {
+  background-color: #000000;
+  float: right;
+  width: 160px;
+}
+#SideSubNav a {
+  color: #ffffff;
+}
+#MainNav {
+  width: 160px;
+  float: left;
 }
 .subnav {
-  display: none;
-}
-.down-arrow {
-  padding: 4px 5px 0px 0px;
+  list-style: none;
 }
 #nav-search {
   border-top: 1px solid #b0b0b0;
@@ -99,44 +134,21 @@
   background-color: #000000;
   border: none;
 }
-#SideSubNav {
-  background-color: #000000;
-  height: 100%;
-  z-index: 20;
-  position: relative;
-  float: right;
-  width: 160px;
-}
-#SideSubNav a {
-  color: #ffffff;
-}
-.subnav {
-  list-style: none;
-}
 /* Article Area */
 #ArticleHolder {
-  padding-top: 30px;
+  float: left;
+  padding: 50px 30px;
   width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  z-index: 10;
-  padding-top: 190px;
-}
-.story-content-placeholder {
-  height: auto;
-  overflow: auto;
+  max-width: 770px;
 }
 /* Side Bar */
 #SideBar {
-  height: 100%;
+  height: 450px;
+  padding-top: 20px;
   width: 100%;
   max-width: 320px;
-  z-index: 20;
-  overflow-y: auto;
-  position: absolute;
-  top: 0px;
-  padding-top: 190px;
+  float: left;
+  margin: 10px;
 }
 #SideBar .nav-tabs {
   border: none;
@@ -216,21 +228,6 @@
 }
 /* Large desktop */
 @media (min-width: 1200px) {
-  #ArticleHolder {
-    left: 180px;
-    width: 600px;
-    z-index: 10;
-  }
-  #SideBar {
-    left: 800px;
-  }
-  #SideBarButton,
-  #SideNavButton {
-    display: block;
-  }
-  #HeaderLogo {
-    margin-left: 0px;
-  }
   .left-frame {
     max-width: 1130px;
     /* margin: 0px -15px 0px -15px; padding: 0px 15px; */
@@ -238,77 +235,28 @@
 }
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 1200px) {
-  #SideBar,
-  #SideNav,
-  #SideSubNav {
-    display: none;
-  }
-  #SideBarButton,
-  #SideNavButton {
-    display: block;
-  }
-  #HeaderLogo {
-    margin-left: 50px;
-  }
   .left-frame {
     max-width: 850px;
     /* margin: 0px -15px 0px -15px; padding: 0px 15px; */
   }
   #ArticleHolder {
-    width: 768px;
+    max-width: 500px;
   }
 }
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
-  #SideBar,
-  #SideNav,
-  #SideSubNav {
-    display: none;
-  }
-  #SideBarButton,
-  #SideNavButton {
-    display: block;
-  }
-  #HeaderLogo {
-    margin-left: 50px;
-  }
+@media (max-width: 867px) {
   .left-frame {
     max-width: 100%;
     /* margin: 0px -15px 0px -15px; padding: 0px 15px; */
   }
   #ArticleHolder {
-    width: 100%;
-  }
-  #ArticleHolder,
-  #SideBar,
-  #SideNav {
-    padding-top: 150px;
+    max-width: 100%;
   }
 }
 /* Landscape phones and down */
 @media (max-width: 480px) {
-  #SideBar,
-  #SideNav,
-  #SideSubNav {
-    display: none;
-  }
-  #SideBarButton,
-  #SideNavButton {
-    display: block;
-  }
-  #HeaderLogo {
-    margin-left: 50px;
-  }
   .left-frame {
     max-width: 100%;
     /* margin: 0px -15px 0px -15px; padding: 0px 15px; */
-  }
-  #ArticleHolder {
-    width: 100%;
-  }
-  #ArticleHolder,
-  #SideBar,
-  #SideNav {
-    padding-top: 150px;
   }
 }
