@@ -1,5 +1,5 @@
 var angular = require('angular');
-var $ = require('jquery');
+//var $ = require('jquery');
 var $ = require('jquery-browserify');
 var bootstrap = require('bootstrap');
 require('jquery-mousewheel')($);
@@ -35,12 +35,14 @@ $(".TabPanel").mCustomScrollbar({
 });
 
 
+
 /// Sub Nav Area Functionality
 $( "#MainNav ul li" ).on({
 	mouseenter: function() {
 		var target = $(event.target).attr('targ')
 		$('#SideSubNav ul').hide();
 		$('#' + target + '-nav').css('display', 'block');
+		$('#MainContent').css('margin-left', '320px')
   	},
 });
 
@@ -56,13 +58,23 @@ function abortTimer() { // to be called when you want to stop the timer
 }
 
 
+$().ready(function() {
+	var $scrollingDiv = $("#SideBar");
+
+	$(window).scroll(function(){			
+		$scrollingDiv
+			.stop()
+			.animate({"marginTop": ($(window).scrollTop()) + "px"}, "slow" );			
+	});
+});
+
 
 // Move Content Area left and right on click on menu button
 $( ".shownav" ).click(function() {
-	if ($('#MainContent').css('margin-left') == '320px') {
+	if ($('#MainContent').css('margin-left') == '175px') {
 		$('#MainContent').css('margin-left','30px');
 	} else {
-		$('#MainContent').css('margin-left','320px');
+		$('#MainContent').css('margin-left','175px');
 	}
 });
 
