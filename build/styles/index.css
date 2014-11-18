@@ -9446,15 +9446,6 @@ yx-axis
 /* Global Variables */
 /* colors */
 /* Mix-Ins and Globals */
-.mask {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 60;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-}
 .spacer {
   padding: 8px 5px 5px 5px;
 }
@@ -9478,37 +9469,31 @@ yx-axis
 .fa-p5x {
   font-size: .8em;
 }
+h1 {
+  font-size: 2em !important;
+}
+.mCSB_draggerContainer {
+  left: 15px !important;
+}
 /* Section Chunks */
+.header-push {
+  padding-top: 175px;
+}
 body {
   height: 100%;
   width: 100%;
 }
 /* Header Area */
-#NavPill {
-  background-color: #000000;
-  max-width: 30px;
-  position: fixed;
-  top: 177px;
-  left: 0px;
-  width: 160px;
-  text-align: center;
-  height: 100%;
-  border-right: 1px solid #666666;
-}
 #HeaderContent {
   background-color: #000000;
   border-bottom: 12px solid #eb1c23;
   width: 100%;
+  z-index: 50;
   position: fixed;
   top: 0px;
-  left: 0px;
-  z-index: 50;
 }
-#HeaderAd {
-  padding-top: 10px;
-}
-#HeaderBar {
-  padding-top: 10px;
+#header-ad-placeholder {
+  margin: 10px 0px;
 }
 #HeaderLogo {
   background: url('../img/Golfweek_WHT.png');
@@ -9537,7 +9522,7 @@ body {
   font-size: 1.3 em;
   padding-left: 5px;
 }
-#HeaderSubscribe #HeaderSubscribe span {
+#HeaderSubscribe span {
   font-size: 1em;
   float: right;
   padding: 0px 7px 0px 5px;
@@ -9548,17 +9533,31 @@ body {
   width: 100%;
   overflow: hidden;
   background-color: #ffffff;
-  padding-top: 177px;
+  position: fixed;
+  bottom: 0px;
+  margin-left: 30px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  z-index: 4;
 }
 /*  Side Nav */
-#SideNav {
+nav {
   position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+}
+#NavPill {
+  background-color: #000000;
+  position: fixed;
+  left: 0;
+  width: 30px;
+  text-align: center;
   height: 100%;
-  width: 300px;
-  top: 0px;
-  left: 30px;
-  padding: 0px 0px 0px 0px;
-  z-index: 60;
+  border-right: 1px solid #666666;
 }
 #SideNav ul {
   list-style: none;
@@ -9575,10 +9574,40 @@ body {
 #SideNav .right-arrow {
   padding: 4px 2px 0px 0px;
 }
+#SideNav hr {
+  margin: 5px 5px 5px 0px;
+  border-top: 1px solid #404040;
+}
 #SideSubNav {
-  background-color: #b0b0b0;
-  float: right;
-  width: auto;
+  position: fixed;
+  height: 100%;
+  top: 0px;
+  left: 175px;
+  width: 145px;
+  padding: 0px;
+  z-index: 2;
+  margin: 0px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #b0b0b0;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #b0b0b0 0%, #b0b0b0 53%, #b0b0b0 53%, #898989 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #b0b0b0), color-stop(53%, #b0b0b0), color-stop(53%, #b0b0b0), color-stop(100%, #898989));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #b0b0b0 0%, #b0b0b0 53%, #b0b0b0 53%, #898989 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #b0b0b0 0%, #b0b0b0 53%, #b0b0b0 53%, #898989 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #b0b0b0 0%, #b0b0b0 53%, #b0b0b0 53%, #898989 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #b0b0b0 0%, #b0b0b0 53%, #b0b0b0 53%, #898989 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b0b0b0', endColorstr='#898989', GradientType=1);
+  /* IE6-9 */
 }
 #SideSubNav a {
   color: #211e1f;
@@ -9590,7 +9619,12 @@ body {
   padding: 2px 0px;
 }
 #MainNav {
-  float: left;
+  position: fixed;
+  top: 0px;
+  left: 30px;
+  padding: 0px;
+  z-index: 3;
+  margin: 0px;
   background-color: #000000;
   width: 145px;
   height: 100%;
@@ -9614,16 +9648,18 @@ body {
 /* Article Area */
 #ArticleHolder {
   float: left;
-  padding: 20px 20px 0px 50px;
-  width: 100%;
-  max-width: 770px;
+  padding-top: 15px;
+  width: 90%;
+  max-width: 800px;
+  height: 100%;
+  overflow-y: auto;
 }
 /* Side Bar */
 #SideBar {
-  height: 450px;
+  height: 50%;
   padding-top: 20px;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   float: left;
   margin: 10px;
 }
@@ -9631,7 +9667,7 @@ body {
   border: none;
 }
 #SideBar .nav-tabs li {
-  width: 33%;
+  width: 33.33333333%;
 }
 #SideBar .nav-tabs li a {
   background-color: #d9d9d9;
@@ -9664,9 +9700,7 @@ body {
 }
 #TabsContent {
   border: 2px solid #d9d9d9;
-  border-top: none;
   margin-bottom: 15px;
-  margin-right: 5px;
   padding: 15px;
   height: 100%;
   overflow: hidden;
@@ -9728,6 +9762,18 @@ body {
   }
   #ArticleHolder {
     max-width: 100%;
+  }
+  #HeaderLogo {
+    margin-left: 10px;
+    max-width: 160px;
+    max-height: 29px;
+  }
+  #HeaderBar,
+  #HeaderAd {
+    padding-top: 2px;
+  }
+  #HeaderSocial {
+    display: none;
   }
 }
 /* Landscape phones and down */
