@@ -1,0 +1,338 @@
+/* colors */
+/* Mix-Ins and Globals */
+.spacer {
+  padding: 8px 5px 5px 5px;
+}
+.push-down {
+  margin-top: 18px;
+}
+.clickable {
+  cursor: pointer;
+}
+.inverse {
+  color: #ffffff;
+}
+.fa-1p5x {
+  font-size: 1.5em;
+  padding-left: 3px;
+}
+.fa-1p5x {
+  font-size: 1.3em;
+  padding-left: 3px;
+}
+.fa-p5x {
+  font-size: .8em;
+}
+h1 {
+  font-size: 2em !important;
+}
+.mCSB_draggerContainer {
+  left: 15px !important;
+}
+.header-push {
+  padding-top: 175px;
+}
+body {
+  height: 100%;
+  width: 100%;
+}
+/* Header Area */
+#HeaderContent {
+  background-color: #000000;
+  border-bottom: 12px solid #eb1c23;
+  width: 100%;
+  z-index: 50;
+  position: fixed;
+  top: 0px;
+}
+#header-ad-placeholder {
+  margin: 10px 0px;
+}
+#HeaderLogo {
+  background: url('../img/Golfweek_WHT.png');
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  max-height: 55px;
+  max-width: 300px;
+  background-size: cover;
+  margin-left: 20px;
+}
+#HeaderSubscribe {
+  color: #ffffff;
+  float: left;
+  border: 1px solid #ffffff;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 2px;
+  margin: 8px 9px 0px 0px;
+}
+#HeaderSubscribe .sub-button {
+  font-size: 1.3 em;
+  padding-left: 5px;
+}
+#HeaderSubscribe span {
+  font-size: 1em;
+  float: right;
+  padding: 0px 7px 0px 5px;
+}
+/* CONTENT AREA */
+#MainContent {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+  position: fixed;
+  bottom: 0px;
+  margin-left: 30px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  z-index: 4;
+}
+/*  Side Nav */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+}
+#NavPill {
+  background-color: #000000;
+  position: fixed;
+  left: 0;
+  width: 30px;
+  text-align: center;
+  height: 100%;
+  border-right: 1px solid #666666;
+}
+#SideNav ul {
+  list-style: none;
+  padding: 0px 5px 0px 10px;
+}
+#SideNav ul li {
+  padding: 5px 0px;
+  color: #211e1f;
+  font-size: 0.9em;
+}
+#SideNav a {
+  color: #ffffff;
+}
+#SideNav .right-arrow {
+  padding: 4px 2px 0px 0px;
+}
+#SideNav hr {
+  margin: 5px 5px 5px 0px;
+  border-top: 1px solid #404040;
+}
+#SideSubNav {
+  position: fixed;
+  height: 100%;
+  top: 0px;
+  left: 175px;
+  width: 145px;
+  padding: 0px;
+  z-index: 2;
+  margin: 0px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #b0b0b0;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #b0b0b0 0%, #b0b0b0 53%, #b0b0b0 53%, #898989 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #b0b0b0), color-stop(53%, #b0b0b0), color-stop(53%, #b0b0b0), color-stop(100%, #898989));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #b0b0b0 0%, #b0b0b0 53%, #b0b0b0 53%, #898989 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #b0b0b0 0%, #b0b0b0 53%, #b0b0b0 53%, #898989 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #b0b0b0 0%, #b0b0b0 53%, #b0b0b0 53%, #898989 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #b0b0b0 0%, #b0b0b0 53%, #b0b0b0 53%, #898989 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b0b0b0', endColorstr='#898989', GradientType=1);
+  /* IE6-9 */
+}
+#SideSubNav a {
+  color: #211e1f;
+}
+#SideSubNav ul {
+  padding-top: 10px;
+}
+#SideSubNav ul li {
+  padding: 2px 0px;
+}
+#MainNav {
+  position: fixed;
+  top: 0px;
+  left: 30px;
+  padding: 0px;
+  z-index: 3;
+  margin: 0px;
+  background-color: #000000;
+  width: 145px;
+  height: 100%;
+}
+.subnav {
+  list-style: none;
+}
+#nav-search {
+  border-bottom: 1px solid #666666;
+  margin: 0px 0px 5px 0px;
+}
+#nav-search input {
+  background-color: #000000;
+  border: none;
+  color: #ffffff;
+}
+#nav-search button {
+  background-color: #000000;
+  border: none;
+}
+/* Article Area */
+#ArticleHolder {
+  float: left;
+  padding-top: 15px;
+  width: 90%;
+  max-width: 800px;
+  height: 100%;
+  overflow-y: auto;
+}
+/* Side Bar */
+#SideBar {
+  height: 50%;
+  padding-top: 20px;
+  width: 100%;
+  max-width: 300px;
+  float: left;
+  margin: 10px;
+}
+#SideBar .nav-tabs {
+  border: none;
+}
+#SideBar .nav-tabs li {
+  width: 33.33333333%;
+}
+#SideBar .nav-tabs li a {
+  background-color: #d9d9d9;
+  color: #211e1f;
+  border: none;
+  border-bottom: 7px solid #b0b0b0;
+  font-size: .8em;
+  padding: 8px 5px 1px 5px;
+  border-radius: 0px;
+}
+#SideBar .nav-tabs .active a {
+  background-color: #02b2ed;
+  color: #ffffff;
+  border: none;
+  border-bottom: 7px solid #02b2ed;
+}
+#SideBar .nav-tabs .active a:hover {
+  border: none;
+  border-bottom: 7px solid #02b2ed;
+}
+#SideBar .nav-tabs a:hover {
+  border: none;
+  border-bottom: 7px solid #b0b0b0;
+}
+#SideBar .nav-tabs li:nth-child(1) a {
+  border-radius: 8px 0px 0px 0px;
+}
+#SideBar .nav-tabs li:nth-child(3) a {
+  border-radius: 0px 8px 0px 0px;
+}
+#TabsContent {
+  border: 2px solid #d9d9d9;
+  margin-bottom: 15px;
+  padding: 15px;
+  height: 100%;
+  overflow: hidden;
+}
+.TabPanel {
+  height: 100%;
+  overflow: hidden;
+}
+.news-tab span {
+  color: #02b2ed;
+  font-size: 1em;
+  font-weight: bold;
+}
+.news-tab ul {
+  margin-bottom: 15px;
+  list-style: none;
+  padding-left: 0px;
+}
+.news-tab li:before {
+  content: '\f054';
+  /* FontAwesome char code inside the '' */
+  font-family: FontAwesome;
+  /* FontAwesome or whatever */
+  display: inline-block;
+  color: #eb1c23;
+  width: 20px;
+  /* same as padding-left set on li */
+  margin-left: 20 px;
+  /* same as padding-left set on li */
+  font-size: .75em;
+}
+ .news-tab li {
+  border-bottom: 1px solid #d9d9d9;
+  padding: 10px 0px;
+  line-height: 1em;
+}
+/* Large desktop */
+@media (min-width: 1200px) {
+  .left-frame {
+    max-width: 1130px;
+    /* margin: 0px -15px 0px -15px; padding: 0px 15px; */
+  }
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .left-frame {
+    max-width: 850px;
+    /* margin: 0px -15px 0px -15px; padding: 0px 15px; */
+  }
+  #ArticleHolder {
+    max-width: 500px;
+  }
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 867px) {
+  .left-frame {
+    max-width: 100%;
+    /* margin: 0px -15px 0px -15px; padding: 0px 15px; */
+  }
+  #ArticleHolder {
+    max-width: 100%;
+  }
+  #HeaderLogo {
+    margin-left: 10px;
+    max-width: 160px;
+    max-height: 29px;
+  }
+  #HeaderBar,
+  #HeaderAd {
+    padding-top: 2px;
+  }
+  #HeaderSocial {
+    display: none;
+  }
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .left-frame {
+    max-width: 100%;
+    /* margin: 0px -15px 0px -15px; padding: 0px 15px; */
+  }
+}

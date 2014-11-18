@@ -27,7 +27,6 @@ Desktop.ini
 # Gulp Build files and folders #
 ################################
 .sass-cache
-build
 dist
 keys
 
