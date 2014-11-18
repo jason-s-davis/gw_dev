@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Golfweek Templates</title>
+	<link rel="stylesheet" type="text/css" href="styles/index.css" />
+	
+	<script>
+	 // Load GPT asynchronously
+	 var googletag = googletag || {};
+	 googletag.cmd = googletag.cmd || [];
+	 (function() {
+	   var gads = document.createElement('script');
+	   gads.async = true;
+	   var useSSL = 'https:' == document.location.protocol;
+	   gads.src = (useSSL ? 'https:' : 'http:') +
+	       '//www.googletagservices.com/tag/js/gpt.js';
+	   var node = document.getElementsByTagName('script')[0];
+	   node.parentNode.insertBefore(gads, node);
+	 })();
+
+	</script>
+	<script>
+		// GPT slots
+		var gptAdSlots = [];
+		googletag.cmd.push(function() {
+
+		// Define a size mapping object. The first parameter to addSize is
+		// a viewport size, while the second is a list of allowed ad sizes.
+		var mapping728x90 = googletag.sizeMapping().
+
+		// Accepts both common mobile banner formats
+		addSize([0, 0], [[320, 50], [300, 50]]). 
+		// Small Devices and larger
+		addSize([768, 0], [728, 90]).
+		// Small Devices and larger
+		addSize([1020, 0], [[980, 50], [728, 90]]).build();
+
+		// Define the GPT slot
+		gptAdSlots[0] = googletag.defineSlot('/310322/a.site152.tmus', [980, 50], 'header-ad-placeholder').
+		defineSizeMapping(mapping728x90).
+		addService(googletag.pubads());
+
+
+		var mapping300x250 = googletag.sizeMapping().
+		// Accepts both common mobile banner formats
+		addSize([0, 0], [300, 250]). 
+		// Small Devices and larger
+		addSize([768, 850], [300, 250],[300, 600]).build();		
+
+		gptAdSlots[1] = googletag.defineSlot('/310322/a.site152.tmus', [300, 250], 'sidebar-ad-placeholder').
+		defineSizeMapping(mapping300x250).
+		addService(googletag.pubads());
+
+		// Start ad fetching
+			googletag.enableServices();
+			googletag.cmd.push(function() {
+				googletag.display('header-ad-placeholder');
+				googletag.display('sidebar-ad-placeholder');
+			});
+		});
+
+	 // setInterval(function(){
+	 // 	googletag.pubads().refresh();
+	 // 	console.log("Refresh Ads");
+	 // }, 15000);
+
+	</script>
+
+</head>
+<body>
+
+<header id="HeaderContent">	
+	<div class="left-frame">
+		<div id="HeaderAd" role="banner" align="center">
+			<div class="col-xs-12">
+				<div id="header-ad-placeholder"></div>
+			</div>
+		</div>
+		<div id="HeaderBar" role="logoarea" class="row">
+			<div class="col-xs-12 col-sm-6">
+				<a href="/"><div id="HeaderLogo"></div></a>
+			</div>
+			<div id="HeaderSocial" class="col-xs-12 col-sm-6">
+				<div class="pull-right spacer">
+					<a href=""><div id="HeaderSubscribe"><i class="fa fa-arrow-circle-right sub-button"></i><span>SUBSCRIBE</span></div></a>
+					<i class="fa fa-instagram fa-2x inverse spacer clickable"></i>
+					<i class="fa fa-twitter fa-2x inverse spacer clickable"></i>
+					<i class="fa fa-facebook fa-2x inverse spacer clickable"></i>
+					<i class="fa fa-youtube fa-2x inverse spacer clickable"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<nav id="SideNav" role="navigation">
+	<navpill id="NavPill" class="header-push">
+		<i id="SideNavButton" class="fa fa-reorder fa-1p5x inverse spacer clickable shownav"></i>
+		<i id="SearchNavButton" class="fa fa-search fa-1p5x inverse spacer clickable shownav"></i>
+		<i class="fa fa-sort-alpha-asc fa-1p5x inverse spacer clickable"></i>
+		<i class="fa fa-upload fa-1p5x inverse spacer clickable"></i>
+	</navpill>
+	<subnav id="SideSubNav" class="header-push" role="navigation">
+		<ul id="pga-sub-nav" class="subnav">
+			<li><strong>PGA Tour</strong></li>
+			<li><hr></li>
+			<li><a href="">Latest News</a></li>
+			<li><a href="">Live Scores</a></li>
+			<li><a href="">Scoreboard</a></li>
+			<li><a href="">Schedule</a></li>
+			<li><a href="">Tour Tracker</a></li>
+			<li><a href="">Winner's Bags</a></li>
+			<li><hr></li>
+			<li><strong>On the beat</strong></li>
+			<li><a href="">Jim McCabe</a></li>
+			<li><a href="">Adam Schupak</a></li>
+			<li><a href="">Alex Miceli</a></li>
+			<li><a href="">Jeff Babineau</a></li>
+			<li><hr></li>
+			<li><strong>Multimedia</strong></li>
+			<li><a href="">Podcasts</a></li>
+			<li><a href="">Photo Galleries</a></li>
+			<li><a href="">Videos</a></li>
+			<li><hr></li>
+			<li><strong>Other Tours</strong></li>
+			<li><a href="">PGA Tour Canada</a></li>
+			<li><a href="">PGA Latino America</a></li>
+			<li><hr></li>
+			<li><strong>Newsletters</strong></li>
+			<li><a href="">Approach Shots</a></li>
+			<li><a href="">Toy Box Extra</a></li>
+			<li><a href="">Golf Life Extra</a></li>
+		</ul>
+
+		<ul id="lpga-sub-nav" class="subnav" style="display: none">
+			<li><strong>LPGA</strong></li>
+			<li><a href="">News</a></li>
+			<li><a href="">Scores</a></li>
+			<li><a href="">Rankings</a></li>
+		</ul>
+
+		<ul id="euro-sub-nav" class="subnav" style="display: none">
+			<li><strong>European Tour</strong></li>
+			<li><a href="">News</a></li>
+			<li><a href="">Scores</a></li>
+			<li><a href="">Rankings</a></li>
+		</ul>
+
+		<ul id="chmp-sub-nav" class="subnav" style="display: none">
+			<li><strong>Champions Tour</strong></li>
+			<li><a href="">News</a></li>
+			<li><a href="">Scores</a></li>
+			<li><a href="">Rankings</a></li>
+		</ul>
+	</subnav>
+	<div id="MainNav" class="header-push">
+		<form action="http://golfweek.com/searches/" method="get" target="_top">
+		    <div class="input-group" id="nav-search">
+		      <input type="text" class="form-control" placeholder="SEARCH">
+		      <span class="input-group-btn">
+		        <button class="btn btn-default" type="submit"><i class="fa fa-search inverse clickable"></i></button>
+		      </span>
+		    </div><!-- /input-group -->
+        </form>
+		<ul>
+			<li targ="pga-sub"><a href="">PGA TOUR</a></li>
+			<li targ="lpga-sub"><a href="">LPGA TOUR</a></li>
+			<li targ="euro-sub"><a href="">EUROPEANS</a></li>
+			<li targ="chmp-sub"><a href="">CHAMPIONS</a></li>
+			<li targ="web-sub"><a href="">WEB.COM TOUR</a></li>
+			<li><a href="">FORECADDIE</a></li>
+			<li><a href="">LIVE SCORES</a></li>
+			<li targ="scoreboard-sub"><a href="">SCOREBOARD</a></li>
+			<li targ="college-sub"><a href="">COLLEGE</a></li>
+			<li targ="amateur-sub"><a href="">AMATEUR</a></li>
+			<li targ="junior-sub"><a href="">JUNIOR</a></li>
+			<li targ="recruiting-sub"><a href="">RECRUITING</a></li>
+			<li targ="equipment-sub"><a href="">EQUIPMENT</a></li>
+			<li targ="instruction-sub"><a href="">INSTRUCTION</a></li>
+			<li targ="courses-sub"><a href="">GOLF COURSES</a></li>
+			<li targ="videos-sub"><a href="">VIDEOS</a></li>
+			<li targ="events-sub"><a href="">EVENTS</a></li>
+			<li targ="newsletters-sub"><a href="">NEWSLETTER</a></li>
+			<li><a href="">E-MAGAZINES</a></li>
+			<li><a href="">STAFF</a></li>
+		</ul>
+	</div>
+</nav>
+
+<main role="main" id="MainContent" class="left-frame header-push" ng-app="infscr" ng-controller="infScrollCtrl" >	
+	<article id="ArticleHolder" role="article"  class="container" scroll-div>
+		<div class="row">
+			<div class="col-xs-12">
+
+		<breadcrumbs>PGA Tour</breadcrumbs>
+		<h1>Golfweek PostGame: Moore repeats at CIMB Classic</h1>
+
+		<div class="story_lead_photo">
+			<div class="photo">
+				<a href="/photos/2014/nov/02/57168/" title="Ryan Moore defended his title at the 2014 CIMB Classic in Malaysia.">
+					<img src="http://golfweek.media.clients.ellingtoncms.com/img/photos/2014/11/02/ryan-moore-cimb.jpg" alt="Ryan Moore defended his title at the 2014 CIMB Classic in Malaysia." class="img-responsive">
+				</a>
+			</div>
+			<p class="byline">
+				 Photo by <a href="/staff/associated-press/">Associated Press</a> 
+			</p>
+			<p class="caption">Ryan Moore defended his title at the 2014 CIMB Classic in Malaysia.</p>
+		</div>
+
+		<div class="story-content-placeholder">
+			<div id="story_body_content">
+
+			<p><em>Each week, we'll look at the week that was on the PGA Tour with Golfweek PostGame, breaking down the water-cooler information that will help you impress your golfing buddies in the office. Here's a look at Week 4 on the PGA Tour. There's nothing like some PGA Tour action in Kuala Lumpur</em>:</p>
+
+			<p>• • •</p>
+
+			<p>These wins in Malaysia over <a href="http://scores.golfweek.com/scores.asp?ACTION=Player&amp;PlayerID=1805"><strong>Gary Woodland</strong></a> are getting easier for <a href="http://scores.golfweek.com/scores.asp?ACTION=Player&amp;PlayerID=1851"><strong>Ryan Moore</strong></a>.</p>
+
+			<p>Having needed a fifth day and a playoff to beat Woodland in 2013, Moore handled that chore in the minimum 72 holes this time around to successfully defend his title at the CIMB Classic at Kuala Lumpur Golf and Country Club. A month shy of his 32nd birthday, Moore – who closed with a 67 to finish at 17-under 271 – became the first player on the PGA Tour since <a href="http://scores.golfweek.com/scores.asp?ACTION=Player&amp;PlayerID=1951"><strong>Tiger Woods</strong></a> at the 2013 <a href="http://scores.golfweek.com/scores.asp?ACTION=Player&amp;PlayerID=7763"><strong>Arnold Palmer</strong></a> Invitational to win a title defense. Though, truth be told, even though Woodland did finish second for a second straight year, tied with <a href="http://scores.golfweek.com/scores.asp?ACTION=Player&amp;PlayerID=1820"><strong>Sergio Garcia</strong></a> (69) and Kevin Na, (70), this time around it was Na who provided the staunchest competition.</p>
+
+			<p>In fact, Na seemed to be in line for his second PGA Tour win when he birdied three of his first four holes and turned in 32 to forge into the lead. Even after he bogeyed the 13th to fall back into a tie, Na had the advantage when he drove the green at the par-4 14th to make Moore’s decision to lay up look questionable.</p>
+
+			<p>Think again, because once again golf proved itself to be the game that can’t be explained. Moore took that conservative tee shot at 14 and stuffed his approach for birdie, Na three-putted for par, and the defending champ had the lead for the first time. Moore added to his lead with a birdie at the par-3 15th, then watched Na’s chances melt away in Malaysia furnace-like heat with a tee shot that landed in a tree at the 17th and never came down.</p>
+
+			<p>It was a double-bogey for Na, who started the day tied for the lead with Moore but now trailed by four. For Moore, it meant that Woodland, thanks to birdies at 10, 14 and 15, was his closest pursuer, but no worries. Moore jammed his approach at 17 to kick-in range for his eighth and final birdie of the day.</p>
+
+			<p>“Last year was a lot more stressful,” Moore said, after winning his fourth PGA Tour title. “To do it the way I did, (where) I hit some great shots down the stretch ... all in all, a great week. I love playing down here.”</p>
+
+			<p>Really? We never would have guessed.</p>
+
+			<p>• • •</p>
+
+			<p><strong>ANYONE SEE MY BALL?</strong> The path to victory for Moore was made easier when his playing competitors – Garcia at the 10th, Na at the 17th – each hit errant tee shots that were never found.</p>
+
+			<p>Garcia trailed by one to start the final round and went out in 33 to remain just one back. But he was well wide with his drive at the par-5 10th and wound up making double. Just too big of a hole to crawl out of, though he recovered with birdies at 11 and 14 to at least salvage a share of second.</p>
+
+			<p>As for Na, he trailed by just one at the 17th tee. Choosing an iron for safety reasons, Na sprayed it wildly right and spectators told officials they heard it hit into a palm tree, but never saw it.</p>
+
+			<p>• • •</p>
+
+			<p><strong>MOVING FORWARD:</strong> Let’s see. You win your nation’s junior championship, then you capture the amateur title the next year. Seems only logical you’d turn pro and run off a string of top 10 finishes as a pro two years later, right?</p>
+
+			<p>Cameron Smith, a 21-year-old Aussie, has no problem with that plan because he has done just that.</p>
+
+			<p>A regular on the Asian Tour as he eases into pro golf, Smith closed with a bogey-free 68 to lift himself into a share of fifth in his PGA Tour debut. He’s now been top 10 in six straight tournaments, seven of eight, and acquitted himself nicely against the strongest field he’s faced since turning pro.</p>
+
+			<p>Smith, who was already committed to playing in the OHL Classic at Mayakoba in two weeks, can head toward the states even earlier, because his top-10 finish earns him a spot in next week’s Sanderson Farms Championship.</p>
+
+			<p>• • •</p>
+			</div>
+			</div>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-xs-12">
+    			<div class='story-teaser' ng-repeat="story in stories">
+   					<a href="#"><h6>{{ story.headline }} &nbsp;>></h6></a>
+    			</div>    		
+    		</div>    		
+    	</div>
+    </article>
+    <aside id="SideBar" role="sidebar" align="center">
+		<ul class="nav nav-tabs" id="tabs" role="tablist" data-tabs="tabs">
+			<li role="presentation" class="active"><a href="#latest" role="tab" data-toggle="tab">LATEST</a></li>
+			<li role="presentation"><a href="#livescores" role="tab" data-toggle="tab">LIVE SCORES</a></li>
+			<li role="presentation"><a href="#pgatour" role="tab" data-toggle="tab">PGA TOUR</a></li>
+		</ul>
+
+    	<div class="tab-content" id="TabsContent">
+			<div role="tabpanel" class="tab-pane active TabPanel" id="latest">
+				<div class="news-tab" align="left">
+					<span>Professional</span>
+					<ul>
+						<li>European Tour releases early 2014-15 schedule</li>
+						<li>LPGA names UL title sponsor of International Crown</li>
+						<li>Golfweek PsotGame: Martin takes Vegas</li>
+						<li>Hend wins Hong Kong Open in playoff</li>
+					</ul>
+					<span>College</span>
+					<ul>
+						<li>European Tour releases early 2014-15 schedule</li>
+						<li>LPGA names UL title sponsor of International Crown</li>
+						<li>Golfweek PsotGame: Martin takes Vegas</li>
+						<li>Hend wins Hong Kong Open in playoff</li>
+					</ul>
+					<span>Junior</span>
+					<ul>
+						<li>European Tour releases early 2014-15 schedule</li>
+						<li>LPGA names UL title sponsor of International Crown</li>
+						<li>Golfweek PostGame: Martin takes Vegas</li>
+						<li>Hend wins Hong Kong Open in playoff</li>
+					</ul>
+					<span>Amateur</span>
+					<ul>
+						<li>European Tour releases early 2014-15 schedule</li>
+						<li>LPGA names UL title sponsor of International Crown</li>
+						<li>Golfweek PsotGame: Martin takes Vegas</li>
+						<li>Hend wins Hong Kong Open in playoff</li>
+					</ul>
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane fade TabPanel" id="livescores">SCORES</div>
+			<div role="tabpanel" class="tab-pane fade TabPanel" id="pgatour">PGA TOUR NEWS</div>
+		</div>
+    	<div id="sidebar-ad-placeholder"></div>
+	</aside>
+	<div class="clearfix"></div>
+</main>
+
+
+<!--<div id="bg-links" style="width:100%; position:fixed; top: 0px; float:left; z-index:0; height:100%"></div>-->
+
+<div style="height:0px; visibility:hidden; display:none">
+<script>
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+</script>
+	<script type="text/javascript">
+	ord = getRandomInt(1,1000)
+	document.write('<SCR'+'IPT LANGUAGE="JavaScript1.1" SRC="http://ad.doubleclick.net/adj/a.site152.tmus/;tile=1;pos=1;dcopt=ist;sz=125x615;ord=' + ord + '?" ><\/SCRIPT>');
+	if ((!document.images && navigator.userAgent.indexOf("Mozilla/2.") >= 0)  || navigator.userAgent.indexOf("WebTV")>= 0) {
+	    document.write('<' + 'a href="http://ad.doubleclick.net/jump/a.site152.tmus/;tile=1;pos=1;dcopt=ist;sz=125x615;ord=' + ord + '?" target="_blank">');
+	    document.write('<' + 'img src="http://ad.doubleclick.net/ad/a.site152.tmus/;tile=1;pos=1;dcopt=ist;sz=125x615;ord=' + ord + '?" border="0" alt=""><' + '/a>');
+	}
+	</script>
+</div>
+
+	<script type="text/javascript" src="scripts/app.min.js"></script>
+	<script type="text/javascript" src="scripts/infscr.js"></script>
+</body>
+</html>
