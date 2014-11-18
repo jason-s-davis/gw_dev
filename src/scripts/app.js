@@ -46,18 +46,27 @@ $( "#MainNav ul li" ).on({
   	},
 });
 
+/**********************************************/
 
+// check every half second for change in header height due to ads, and then resize the content area for that padding amount.
+var tid = setInterval(checkHeaderHeight, 200);
 
-// set interval
-var tid = setInterval(checkHeaderHeight, 500);
 function checkHeaderHeight() {
   $('.header-push').css('padding-top', $('#HeaderContent').height() + 10);
 }
+
 function abortTimer() { // to be called when you want to stop the timer
   clearInterval(tid);
 }
 
+$(document).ready( function(){
+	checkHeaderHeight();
+});
 
+
+/***********************************************/
+
+/**  Keep the sidebar up top **/
 $().ready(function() {
 	var $scrollingDiv = $("#SideBar");
 
@@ -68,6 +77,7 @@ $().ready(function() {
 	});
 });
 
+/*******************************************************/
 
 // Move Content Area left and right on click on menu button
 $( ".shownav" ).click(function() {
@@ -77,6 +87,10 @@ $( ".shownav" ).click(function() {
 		$('#MainContent').css('margin-left','175px');
 	}
 });
+
+
+
+/*******************************************************/
 
 ///  Tabs Functionality Init.
 $('#tabs a').click(function (e) {

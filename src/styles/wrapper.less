@@ -4,7 +4,7 @@
 	padding-top: 175px;
 }
 
-body { height: 100%; width: 100%; }
+body { height: 100%; width: 100%; overflow-x: hidden }
 
 /* Header Area */
 
@@ -17,7 +17,7 @@ body { height: 100%; width: 100%; }
 	top: 0px;
 }
 
-#header-ad-placeholder { margin: 10px 0px;}
+#header-ad-placeholder { margin: 10px 0px; min-height: 90px; }
 
 #HeaderLogo { 
 	background: url('../img/Golfweek_WHT.png'); 
@@ -181,6 +181,11 @@ nav {
 	#HeaderLogo { margin-left: 10px; max-width: 160px; max-height: 29px;}
 	#HeaderBar, #HeaderAd { padding-top: 2px; }
 	#HeaderSocial { display: none; }
+	aside { display: none }
+	#header-ad-placeholder { min-height: 50px; }
+	.header-push {
+		padding-top: 111px;
+	}
 }
  
 /* Landscape phones and down */
