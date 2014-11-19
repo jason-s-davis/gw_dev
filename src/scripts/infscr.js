@@ -17,18 +17,19 @@ function scrollDiv ($window) {
 
       // wait for the LOADDONE event
       scope.$on('LOADDONE', function (event) {
+        scope.position = Math.floor(((window.pageYOffset + $(window).height()) / $(document).height()) * 100);
         
-        angular.element($window).bind('scroll', function () {        
-          scope.position = Math.floor(this.pageYOffset);
-          console.log(scope.position);
+        angular.element(window).bind('scroll', function () {          
+          scope.position = Math.floor(((this.pageYOffset + $(window).height()) / $(document).height()) * 100);
+          if (scope.position > 85) {
+            scope.getMore();
+          }
           scope.$apply();
         });
 
-        // element[0].onscroll = function () {            
-        //     scope.position = Math.floor((element[0].scrollTop / (element[0].scrollHeight - element[0].clientHeight)) * 100);
-        //     console.log(scope.position);  
-        // };
-
+        if (scope.count >= 60) {
+          angular.element(window).unbind('scroll');
+        }
       });
 
     }
@@ -63,12 +64,12 @@ function getStories ($http) {
       category += (ctx.subsubsub === undefined) ? '' : '/' + ctx.subsubsub;
       
       // the count is at minimum 15 but must be in increments of 15 currently
-      ctx.count = (ctx.count === undefined) ? 15 : ctx.count;
+      var count = (ctx.count === undefined) ? 15 : ctx.count;
       
       // make the request to golfweek 
       // ***MUST BE A POST OR ELLINGTON BLOCKS IT***
-      $http.post(url + 'section/?Section=' + category + '&Num=' + ctx.count)
-        .success(function (data) {
+      $http.post(url + 'section/?Section=' + category + '&Num=' + count)
+        .success(function (data) {  
           ctx.success(data);
         })
         .error(function (data, status) {
@@ -95,11 +96,13 @@ function infScrollController ($scope, $window, getStories) {
 	$scope.fetching = false; // are we fetching right now?
   $scope.stories = []; // starts out as an empty array
 
+  $scope.$on('LOAD', function (e) { $scope.fetching = true; });
+  $scope.$on('LOADDONE', function (e) { $scope.fetching = false; });
+
   // this is the success handler when data is received
   $scope.success = function (data) {
-    var less = data.stories.slice($scope.count - 15, data.stories.length);
-    angular.forEach(less, function (val, key) {
-      this.push(val);
+    angular.forEach(data.stories, function (val, key) {
+      this[key] = val;
     }, $scope.stories);
     // let everything know we are done loading
     $scope.$emit('LOADDONE');
@@ -110,12 +113,12 @@ function infScrollController ($scope, $window, getStories) {
 
   // getMore should be used when the div is scrolled
 	$scope.getMore = function () {
-    $scope.count = ($scope.count === 60) ? 60 : $scope.count + 15;
-		// if page position is bigger than 88
+		// if page position is bigger than 88 
 		// fetch more stories
-		if ($scope.position >= 88) {
+		if (!$scope.fetching) {
+      $scope.$emit('LOAD');
+      $scope.count = ($scope.count === 60) ? 60 : $scope.count + 15;
 			// let everything know we are loading
-			$scope.$emit('LOAD');
       getStories.normal($scope);
 
 		}

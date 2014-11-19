@@ -14,10 +14,10 @@ if(s.trigger=a.trigger,(0!==m.scrollTop()||0!==m.scrollLeft())&&(e(".mCSB_"+s.id
 
 // Custom Scrollbar implementations //
 
-$("#ArticleHolder").mCustomScrollbar({
-    axis:"y", // vertical scrollbar
-    theme:"minimal-dark"
-});
+// $("#ArticleHolder").mCustomScrollbar({
+//     axis:"y", // vertical scrollbar
+//     theme:"minimal-dark"
+// });
 
 $("#MainNav").mCustomScrollbar({
     axis:"y", // vertical scrollbar
