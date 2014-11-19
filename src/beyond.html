@@ -105,6 +105,8 @@
 	</navpill>
 	<subnav id="SideSubNav" class="header-push" role="navigation">
 		<ul id="pga-sub-nav" class="subnav">
+			<li><strong>PGA Tour</strong></li>
+			<li><hr></li>
 			<li><a href="">Latest News</a></li>
 			<li><a href="">Live Scores</a></li>
 			<li><a href="">Scoreboard</a></li>
@@ -134,18 +136,21 @@
 		</ul>
 
 		<ul id="lpga-sub-nav" class="subnav" style="display: none">
+			<li><strong>LPGA</strong></li>
 			<li><a href="">News</a></li>
 			<li><a href="">Scores</a></li>
 			<li><a href="">Rankings</a></li>
 		</ul>
 
 		<ul id="euro-sub-nav" class="subnav" style="display: none">
+			<li><strong>European Tour</strong></li>
 			<li><a href="">News</a></li>
 			<li><a href="">Scores</a></li>
 			<li><a href="">Rankings</a></li>
 		</ul>
 
 		<ul id="chmp-sub-nav" class="subnav" style="display: none">
+			<li><strong>Champions Tour</strong></li>
 			<li><a href="">News</a></li>
 			<li><a href="">Scores</a></li>
 			<li><a href="">Rankings</a></li>
@@ -185,8 +190,8 @@
 	</div>
 </nav>
 
-<main role="main" id="MainContent" class="left-frame header-push" ng-app="infscr" ng-controller="infScrollCtrl" scroll-div>	
-	<article id="ArticleHolder" role="article"  class="container">
+<main role="main" id="MainContent" class="left-frame header-push" ng-app="infscr" ng-controller="infScrollCtrl" >	
+	<article id="ArticleHolder" role="article"  class="container" scroll-div>
 		<div class="row">
 			<div class="col-xs-12">
 
@@ -247,21 +252,13 @@
 			<p>• • •</p>
 			</div>
 			</div>
-	    	</div>
+    		</div>
     	</div>
     	<div class="row">
     		<div class="col-xs-12">
-    			<ul class="list-unstyled">
-    			<li class='story-teaser' ng-repeat="story in stories">    				
-   					<a href="{{story.id}}">
-   						<h5 class="text-left">
-   							{{ story.headline }} &nbsp;&nbsp; {{story.timeSince}}	
-   						</h5>
-   					</a>   					
-   						<img src="{{story.photothumb}}" class="img-circle" alt="{{story.id}}">
-   						<span>{{ story.tease }}</span> 				
-    			</li> 
-    			</ul>
+    			<div class='story-teaser' ng-repeat="story in stories">
+   					<a href="#"><h6>{{ story.headline }} &nbsp;>></h6></a>
+    			</div>    		
     		</div>    		
     	</div>
     </article>

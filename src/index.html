@@ -185,7 +185,7 @@
 	</div>
 </nav>
 
-<main role="main" id="MainContent" class="left-frame header-push">	
+<main role="main" id="MainContent" class="left-frame header-push" ng-app="infscr" ng-controller="infScrollCtrl" scroll-div>	
 	<article id="ArticleHolder" role="article"  class="container">
 		<div class="row">
 			<div class="col-xs-12">
@@ -247,7 +247,22 @@
 			<p>• • •</p>
 			</div>
 			</div>
-    		</div>
+	    	</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-xs-12">
+    			<ul class="list-unstyled">
+    			<li class='story-teaser' ng-repeat="story in stories">    				
+   					<a href="{{story.id}}">
+   						<h5 class="text-left">
+   							{{ story.headline }} &nbsp;&nbsp; {{story.timeSince}}	
+   						</h5>
+   					</a>   					
+   						<img src="{{story.photothumb}}" class="img-circle" alt="{{story.id}}">
+   						<span>{{ story.tease }}</span> 				
+    			</li> 
+    			</ul>
+    		</div>    		
     	</div>
     </article>
     <aside id="SideBar" role="sidebar" align="center">
@@ -318,5 +333,6 @@ function getRandomInt(min, max) {
 </div>
 
 	<script type="text/javascript" src="scripts/app.min.js"></script>
+	<script type="text/javascript" src="scripts/infscr.js"></script>
 </body>
 </html>
