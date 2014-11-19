@@ -78,7 +78,8 @@ $(document).ready( function(){
 $().ready(function() {
 	var $scrollingDiv = $("#SideBar");
 
-	$(window).scroll(function(){			
+	$(window).scroll(function(){	
+		console.log(window.pageYOffset);		
 		$scrollingDiv
 			.stop()
 			.animate({"marginTop": ($(window).scrollTop()) + "px"}, "slow" );			
