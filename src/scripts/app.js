@@ -38,18 +38,20 @@ $(".TabPanel").mCustomScrollbar({
 
 function SubNav(){
 	var target = $(event.target).attr('targ')
+		$('#MainNav ul li').removeClass('selected');
+		$('#MainNav ul li a').removeClass('selected');
+		$(event.target).addClass('selected');
 		$('#SideSubNav ul').hide();
 		$('#' + target + '-nav').css('display', 'block');
 		$('#MainContent').css('margin-left', '320px')
 }
 
-$( "#MainNav ul li" ).on({
-	mouseenter: function() {
-		SubNav();
-  	},
-  	click: function() {
-		SubNav();
-  	},
+$( "#MainNav ul li" ).mouseover(function() {
+  SubNav();
+});
+
+$( "#MainNav ul li" ).click(function() {
+  SubNav();
 });
 
 /**********************************************/
