@@ -253,7 +253,7 @@
     		<div class="col-xs-12">
     			<ul class="list-unstyled">
     			<li class='story-teaser' ng-repeat="story in stories">
-    				<div  ng-click="storyClick(story.id)">
+    				<div  ng-click="storyClick('story.id')">
    					<a href="{{story.id}}">
    						<h5 class="text-left">
    							{{ story.headline }} &nbsp;&nbsp; {{story.timeSince}}	
