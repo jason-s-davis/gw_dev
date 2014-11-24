@@ -1,4 +1,4 @@
-
+(function (angular) {
 var infscr = angular.module('infscr', []);
 
 infscr.config(function ($httpProvider) {
@@ -44,18 +44,18 @@ infscr.directive('scrollDiv', ['$window', scrollDiv]);
 
 
 
-// The getStories function uses angularjs' $http
+// The getStoryList function uses angularjs' $http
 // object to make xhr's to get stories
-function getStories ($http) {
+function getStoryList ($http) {
 
   // the url to request stories from
   var url = 'http://golfweek.com/json/';
 
   return {
-    // the normal function should suffice for most normal uses
+    // the get function should suffice for most normal uses
     // it accepts a context object to get info about the sections
     // ctx also needs a success function to return the data
-    normal: function (ctx) {
+    get: function (ctx) {
       // the category function is here for future use with sections and sub sections
       // currently it is not used
       var category = (ctx.section === undefined) ? '' : ctx.section;
@@ -73,25 +73,50 @@ function getStories ($http) {
           ctx.success(data);
         })
         .error(function (data, status) {
-          console.log(data);
-          console.log(status);
+          console.log(data, status);
         });
     }
   }
 }
 
 
-// Assign getStories as an angular factory 
+// Assign getStoryList as an angular factory 
 // in a manner safe for minification
-infscr.factory('getStories', ['$http', getStories]);
+infscr.factory('getStoryList', ['$http', getStoryList]);
 
+
+
+// the getStoryContent function is intended to load the clicked
+// story into the selected div
+function getStoryContent ($http) {
+  
+  // the base url to request the storydata from
+  var url = 'http://golfweek.com/';
+
+  return {
+    get: function (ctx) {      
+      $http.post(url + ctx.slug)
+        .success(function (data) {
+          ctx.storySuccess(data);
+        })
+        .error(function (data, status) {
+          console.log(data, status);
+        });
+    }
+  }
+}
+
+
+// Assign getStoryList as an angular factory 
+// in a manner safe for minification
+infscr.factory('getStoryContent', ['$http', getStoryContent]);
 
 
 
 // the infScrollController function is intended to be used 
 // in the div where the stories should be added for infinite 
 // scrolling
-function infScrollController ($scope, $window, getStories) {
+function infScrollController ($scope, $window, storyList, story) {
 	$scope.count = 15;  // number of stories to get
 	$scope.fetching = false; // are we fetching right now?
   $scope.stories = []; // starts out as an empty array
@@ -104,12 +129,13 @@ function infScrollController ($scope, $window, getStories) {
     angular.forEach(data.stories, function (val, key) {
       this[key] = val;
     }, $scope.stories);
+    console.log('%O', $scope.stories[0]);
     // let everything know we are done loading
     $scope.$emit('LOADDONE');
   }
 
   // get the stories the first time
-  getStories.normal($scope);
+  storyList.get($scope);
 
   // getMore should be used when the div is scrolled
 	$scope.getMore = function () {
@@ -119,14 +145,28 @@ function infScrollController ($scope, $window, getStories) {
       $scope.$emit('LOAD');
       $scope.count = ($scope.count === 60) ? 60 : $scope.count + 15;
 			// let everything know we are loading
-      getStories.normal($scope);
+      storyList.get($scope);
 
 		}
 	}
+
+  $scope.storySuccess = function (data) {
+    // set the data here to the expanding div for the story
+    console.log(data);
+  }
+
+
+  $scope.storyClick = function (slug) {
+    $scope.slug = slug;
+    story.get($scope);
+  }
+
+
 }
 
 
 // Assign infScrollController as an angular controller 
 // in a manner safe for minification
-infscr.controller('infScrollCtrl', ['$scope', '$window', 'getStories', infScrollController]);
+infscr.controller('infScrollCtrl', ['$scope', '$window', 'getStoryList', 'getStoryContent', infScrollController]);
 
+})(angular);

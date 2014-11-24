@@ -257,14 +257,17 @@
     	<div class="row">
     		<div class="col-xs-12">
     			<ul class="list-unstyled">
-    			<li class='story-teaser' ng-repeat="story in stories">    				
+    			<li class='story-teaser' ng-repeat="story in stories">
+    				<div  ng-click="storyClick(story.id)">
    					<a href="{{story.id}}">
    						<h5 class="text-left">
    							{{ story.headline }} &nbsp;&nbsp; {{story.timeSince}}	
    						</h5>
    					</a>   					
    						<img src="{{story.photothumb}}" class="img-circle" alt="{{story.id}}">
-   						<span>{{ story.tease }}</span> 				
+   						<span>{{ story.tease }}</span><span><i class="fa fa-chevron-down"></i></span>
+						<div style="display:none"></div>
+						</div>
     			</li> 
     			</ul>
     		</div>    		
