@@ -95,7 +95,7 @@ function getStoryContent ($http) {
 
   return {
     get: function (ctx) {      
-      $http.post(url + ctx.slug)
+      $http.post(url + ctx.slug + '?json')
         .success(function (data) {
           ctx.storySuccess(data);
         })
@@ -129,7 +129,7 @@ function infScrollController ($scope, $window, storyList, story) {
     angular.forEach(data.stories, function (val, key) {
       this[key] = val;
     }, $scope.stories);
-    console.log('%O', $scope.stories[0]);
+    // console.log('%O', $scope.stories[0]);
     // let everything know we are done loading
     $scope.$emit('LOADDONE');
   }
@@ -152,12 +152,16 @@ function infScrollController ($scope, $window, storyList, story) {
 
   $scope.storySuccess = function (data) {
     // set the data here to the expanding div for the story
+    // console.log('%o', $scope.stories);
+    $scope.stories[$scope.storyId]['storyContent'] = data.story[0];
     console.log(data);
   }
 
 
-  $scope.storyClick = function (slug) {
-    $scope.slug = slug;
+  $scope.storyClick = function () {
+    // console.log('%o',this.$index)
+    $scope.slug = this.story.id;
+    $scope.storyId = this.$index;
     story.get($scope);
   }
 
