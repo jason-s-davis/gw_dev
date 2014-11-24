@@ -9639,7 +9639,7 @@ nav {
   float: left;
   padding-top: 15px;
   width: 90%;
-  max-width: 800px;
+  max-width: 810px;
   height: 100%;
   overflow-y: auto;
 }
@@ -9740,7 +9740,7 @@ nav {
     /* margin: 0px -15px 0px -15px; padding: 0px 15px; */
   }
   #ArticleHolder {
-    max-width: 500px;
+    max-width: 529px;
   }
 }
 /* Landscape phone to portrait tablet */

@@ -54,37 +54,40 @@ $( "#MainNav ul li" ).click(function() {
   SubNav();
 });
 
-/**********************************************/
 
-// check every half second for change in header height due to ads, and then resize the content area for that padding amount.
-var tid = setInterval(checkHeaderHeight, 200);
-
-function checkHeaderHeight() {
-  $('.header-push').css('padding-top', $('#HeaderContent').height() + 10);
+function SideBar(){
+	if($("#sidebar-ad-placeholder").height() < 250){
+		ad_offset = 250
+	} else {
+		ad_offset = $("#sidebar-ad-placeholder").height();
+	}
+	var offset =  $(window).height() - ($('#HeaderContent').height() + ad_offset + 70);
+	$("#SideBar").css({'margin-top': ($(window).scrollTop()), 'height': offset});
+	$("#sidebar-ad-placeholder").css({'position': 'fixed', 'bottom': 10});
 }
 
-function abortTimer() { // to be called when you want to stop the timer
-  clearInterval(tid);
+function HeaderHeight() {
+	$('.header-push').css('padding-top', $('#HeaderContent').height() + 10);
 }
+
 
 $(document).ready( function(){
-	checkHeaderHeight();
+	HeaderHeight();
+	SideBar();
+
+	$(window).resize(function() {
+		SideBar();
+		HeaderHeight();
+	})
+
+	/**  Keep the sidebar up top **/
+	$(window).scroll(function(){
+	$("#SideBar")
+		.stop()
+		SideBar();
+});
 });
 
-
-/***********************************************/
-
-/**  Keep the sidebar up top **/
-$().ready(function() {
-	var $scrollingDiv = $("#SideBar");
-
-	$(window).scroll(function(){	
-		console.log(window.pageYOffset);		
-		$scrollingDiv
-			.stop()
-			.animate({"marginTop": ($(window).scrollTop()) + "px"}, "slow" );			
-	});
-});
 
 /*******************************************************/
 
