@@ -9483,6 +9483,7 @@ body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
+  background-color: #000000;
 }
 /* Header Area */
 #HeaderContent {
@@ -9534,7 +9535,7 @@ body {
   position: absolute;
   width: 100%;
   background-color: #ffffff;
-  margin-left: 175px;
+  margin-left: 30px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -9642,6 +9643,7 @@ nav {
   max-width: 655px;
   height: 100%;
   overflow-y: auto;
+  padding: 25px;
 }
 /* Side Bar */
 #SideBar {
@@ -9734,6 +9736,9 @@ nav {
   }
   .left-frame-plus {
     max-width: 1130px !important;
+  }
+  #MainContent {
+    margin-left: 175px;
   }
 }
 /* Portrait tablet to landscape and desktop */
