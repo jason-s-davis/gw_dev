@@ -173,4 +173,18 @@ function infScrollController ($scope, $window, storyList, story) {
 // in a manner safe for minification
 infscr.controller('infScrollCtrl', ['$scope', '$window', 'getStoryList', 'getStoryContent', infScrollController]);
 
+
+// k code stuff
+function checkKeys (e) {
+  var button = (e.keyCode);
+  console.log(e);
+
+}
+
+
+(function () {
+  window.addEventListener('keydown', checkKeys);
+})()
+
+
 })(angular);
