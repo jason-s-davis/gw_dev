@@ -174,15 +174,51 @@ function infScrollController ($scope, $window, storyList, story) {
 infscr.controller('infScrollCtrl', ['$scope', '$window', 'getStoryList', 'getStoryContent', infScrollController]);
 
 
-// k code stuff
-function checkKeys (e) {
-  var button = (e.keyCode);
-  console.log(e);
-
-}
-
 
 (function () {
+
+  var THECODE = [38,38,40,40,37,39,37,39,66,65];
+
+  var testcode = [];
+  var time;
+
+  // k code stuff
+  function checkKeys (e) {
+    var button = (e.keyCode);
+
+    if (THECODE.indexOf(button) > -1) {
+      testcode[testcode.length] = e.keyCode;
+
+      if (testcode.length === THECODE.length) {
+        checkCode();
+      } else {
+        clearCode();
+      }
+    }
+  }
+
+  function checkCode () {
+    for (var i = 0; i < THECODE.length; i++) {
+      if (THECODE[i] !== testcode[i]) {
+        testcode = [];
+        break;
+      }
+    }
+    if (testcode.length > 0) {
+      console.log('duf time!');
+    }
+  }
+
+  function clearCode () {
+    if (time === undefined) {
+      time = window.setTimeout(function() {
+        testcode = [];
+        window.clearTimeout(time);
+      }, 10000);
+    }
+  }
+
+
   window.addEventListener('keydown', checkKeys);
 })()
 
