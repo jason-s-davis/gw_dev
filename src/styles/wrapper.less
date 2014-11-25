@@ -4,7 +4,7 @@
 	padding-top: 175px;
 }
 
-body { height: 100%; width: 100%; overflow-x: hidden }
+body { height: 100%; width: 100%; overflow-x: hidden; background-color: @gw-black }
 
 /* Header Area */
 
@@ -136,7 +136,7 @@ nav {
 
 
 /* Article Area */
-#ArticleHolder { float: left; padding-top: 15px; width: 90%; max-width: 810px; height: 100%; overflow-y: auto }
+#ArticleHolder { float: left; padding-top: 15px; width: 90%; max-width: 655px; height: 100%; overflow-y: auto; padding: 25px }
 
 /* Side Bar */
 #SideBar { height: 300px; padding-top: 20px; width: 100%; max-width: 300px; float: left; margin: @gw-section-spacer; }
@@ -165,17 +165,21 @@ nav {
 
 /* Large desktop */
 @media (min-width: 1200px) {
-	.left-frame { max-width: 1130px; /* margin: 0px -15px 0px -15px; padding: 0px 15px; */ }
+	.left-frame { max-width: 985px; /* margin: 0px -15px 0px -15px; padding: 0px 15px; */ }
+	.left-frame-plus { max-width: 1130px !important }
+	#MainContent { margin-left: 175px; }
 }
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 1200px) { 
 	.left-frame { max-width: 850px; /* margin: 0px -15px 0px -15px; padding: 0px 15px; */ }
-	#ArticleHolder { max-width: 529px }
+	#ArticleHolder { max-width: 500px }
 }
+
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 867px) {
+
 	.left-frame { max-width: 100%; /* margin: 0px -15px 0px -15px; padding: 0px 15px; */ }
 	#ArticleHolder { max-width: 100% }
 	#HeaderLogo { margin-left: 10px; max-width: 160px; max-height: 29px;}
