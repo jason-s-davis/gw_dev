@@ -37,10 +37,10 @@ function SubNav(event){
 // activate SubNav on mouseover or click of main nav
 $("#MainNav").on("click mouseover", "ul li", SubNav);
 
+// if the mouse enters the main content close the subnav
 $('main').on('mouseenter', function (event) {
 	closer = window.setTimeout(function () {
 			$('#MainContent').css('margin-left', '175px');
-			console.log('here')
 		}, 500);
 });
 
@@ -59,7 +59,6 @@ function SideBar(){
 function HeaderHeight() {
 	$('.header-push').css('padding-top', $('#HeaderContent').height() + 10);
 }
-
 
 // $(document).ready( function(){
 
@@ -80,7 +79,6 @@ function HeaderHeight() {
 
 // });
 
-
 /*******************************************************/
 
 // Move Content Area left and right on click on menu button
@@ -94,13 +92,7 @@ $( ".shownav" ).click(function() {
 	}
 });
 
-
-
-
-
 /*******************************************************/
-
-
 
 // ********* Init custom scrollbars here  ********* //
 $("#MainNav").mCustomScrollbar({
