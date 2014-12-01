@@ -9534,6 +9534,7 @@ body {
 #MainContent {
   position: absolute;
   width: 100%;
+  min-height: 100%;
   background-color: #ffffff;
   margin-left: 30px;
   -webkit-transition: all 0.5s;
