@@ -175,19 +175,6 @@ infscr.controller('infScrollCtrl', ['$scope', '$window', 'getStoryList', 'getSto
 
 
 
-var storyList = {};
-var storyCount = 15;
-
-function bindModelInput(obj, property, domElem) {
-  Object.defineProperty(obj, property, {
-    get: function() { return domElem.value; }, 
-    set: function(newValue) { domElem.value = newValue; },
-    configurable: true
-  });
-}
-
-
-
 
 
 

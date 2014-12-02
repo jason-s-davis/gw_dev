@@ -40,9 +40,12 @@ $("#MainNav").on("click mouseover", "ul li", SubNav);
 
 // if the mouse enters the main content close the subnav
 $('main').on('mouseenter', function (event) {
-	closer = window.setTimeout(function () {
+	// if the nav bar is open close the sub nav
+	if ($('#MainContent').css('margin-left') !== "30px") {
+		closer = window.setTimeout(function () {
 			$('#MainContent').css('margin-left', '175px');
 		}, 500);
+	}
 });
 
 function SideBar(){
