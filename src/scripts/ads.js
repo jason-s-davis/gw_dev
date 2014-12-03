@@ -1,4 +1,4 @@
-(function () {
+(function (googletag) {
 // GPT slots
 var gptAdSlots = [];
 googletag.cmd.push(function() {
@@ -42,4 +42,4 @@ googletag.cmd.push(function() {
 // 	googletag.pubads().refresh();
 // 	console.log("Refresh Ads");
 // }, 15000);
-})()
+})(googletag)

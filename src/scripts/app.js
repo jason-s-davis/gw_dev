@@ -7,8 +7,11 @@ require('../../libs/scrollbar/jquery.mCustomScrollbar');
 require('../../libs/slick/slick.min');
 require('./infscr');
 require('./ads');
+require('./scores');
+
 
 (function($){
+
 
 /// Sub Nav Area Functionality
 var closer;
