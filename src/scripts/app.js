@@ -6,7 +6,7 @@ var jQuery = $;
 require('../../libs/scrollbar/jquery.mCustomScrollbar');
 require('../../libs/slick/slick.min');
 require('./infscr');
-require('./ads');
+// require('./ads');
 require('./scores');
 
 
@@ -18,38 +18,45 @@ var closer;
 
 function SubNav(event){
 
-		window.clearTimeout(closer);
-		
-		var target = $(event.target).attr('targ')
+	window.clearTimeout(closer);
+	
+	var target = $(event.target).attr('targ')
 
-		// remove red from item and link
-		$('#MainNav ul li').removeClass('selected');
-		$('#MainNav ul li a').removeClass('selected');
-		
-		// add red background to hovered item
-		$(event.target).addClass('selected');
-		// hide all of the sub nav
-		$('#SideSubNav ul').hide();
-		// show the subnav for the hovered item
-		$('#' + target + '-nav').css('display', 'block');
+	// remove red from item and link
+	$('#MainNav ul li').removeClass('selected');
+	$('#MainNav ul li a').removeClass('selected');
+	
+	// add red background to hovered item
+	$(event.target).addClass('selected');
+	// hide all of the sub nav
+	$('#SideSubNav ul').hide();
+	// show the subnav for the hovered item
+	$('#' + target + '-nav').css('display', 'block');
 
-		// slide the main content over to the right
-		$('#MainContent').css('margin-left', '320px');
+	// slide the main content over to the right
+	$('#MainContent').css('margin-left', '320px');
 
 }
 
 // activate SubNav on mouseover or click of main nav
 $("#MainNav").on("click mouseover", "ul li", SubNav);
 
-// if the mouse enters the main content close the subnav
-$('main').on('mouseenter', function (event) {
+
+function CloseSubNav (event) {
+	var mainWidth = $('#MainContent').css('margin-left');
+	mainWidth = mainWidth.replace('px', '');
+	mainWidth = parseInt(mainWidth);
 	// if the nav bar is open close the sub nav
-	if ($('#MainContent').css('margin-left') !== "30px") {
+	if (mainWidth >= 175) {
 		closer = window.setTimeout(function () {
 			$('#MainContent').css('margin-left', '175px');
 		}, 500);
 	}
-});
+}
+
+
+// if the mouse enters the main content close the subnav
+$('main').on('mouseenter', CloseSubNav);
 
 function SideBar(){
 
@@ -67,24 +74,22 @@ function HeaderHeight() {
 	$('.header-push').css('padding-top', $('#HeaderContent').height() + 10);
 }
 
-// $(document).ready( function(){
 
-	HeaderHeight();
+HeaderHeight();
+SideBar();
+
+$(window).resize(function() {
 	SideBar();
+	HeaderHeight();
+})
 
-	$(window).resize(function() {
-		SideBar();
-		HeaderHeight();
-	})
+/**  Keep the sidebar up top **/
+$(window).scroll(function(){
+$("#SideBar")
+	.stop()
+	SideBar();
+});
 
-	/**  Keep the sidebar up top **/
-	$(window).scroll(function(){
-	$("#SideBar")
-		.stop()
-		SideBar();
-	});
-
-// });
 
 /*******************************************************/
 
@@ -100,6 +105,7 @@ $( ".shownav" ).click(function() {
 });
 
 /*******************************************************/
+
 
 // ********* Init custom scrollbars here  ********* //
 $("#MainNav").mCustomScrollbar({

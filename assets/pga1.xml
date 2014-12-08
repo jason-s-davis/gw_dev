@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="windows-1252"?><Tourn T_ID="R2015478" CurTime="1:53:26 PM ET. 12/03/2014" Name="Hero World Challenge" Loc="Isleworth Golf &amp; CC" LocState="FL" Purse="$3,500,000" CurRnd="1" CurRndState="Groupings Official" CutRnd="" CutLine="" CutCount="" IsProjectedCut="No" Format="Stroke" IsTeeTimeRevised="Yes" LastRevisionAt="12/02/2014 1:42:03 pm" NumRnds="4" TournId="478" TourCode="R" localTZ="ET" detailedLocalTZ="America/New_York" localCity="Windermere" FedExCup="Yes">
+  <Courses>
+    <Course CrsCode="754" CrsName="Isleworth Golf &amp; CC" CrsAcronym="IW" CrsPar="72" CrsYard="7354" frontPar="36" backPar="36"/>
+  </Courses>
+  <Rounds>
+    <Round RoundNum="1" IsTeeTimeRevised="Yes" LastRevisionAt="12/02/2014 1:42:03 pm"/>
+    <Round RoundNum="2" IsTeeTimeRevised="No"/>
+    <Round RoundNum="3" IsTeeTimeRevised="No"/>
+    <Round RoundNum="4" IsTeeTimeRevised="No"/>
+  </Rounds>
+  <Players>
+    <Player PID="24024" Lname="Johnson" Fname="Zach" FInit="Z" FreezeName="JOHNSON" StrPos="" CurPos="" CurRnd="1" CurParRel="E" TournParRel="E" TournStrk="0" Thru="" MnyRnk="0" TTime="11:25 a" ProjMny="" SortIndex="1" CrsCode="754" ShortName="Z" isAm="No" YTDFedExPts="0" YTDFedExRnk="207" YTDFedExTrailing="681" YTDFedExTrailingPrj="681" BonusMoneyPrj="$0.00" YTDFedExPtsPrj="0" YTDFedExRnkPrj="0" EVTFedExPts="0">
+      <Rnd CrsCode="754" Num="1" ParRel="E" Thru="" front="" back="" ttime="11:25 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="2" ParRel="E" Thru="" front="" back="" ttime="11:25 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="3" ParRel="E" Thru="" front="" back="" ttime="11:25 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="4" ParRel="E" Thru="" front="" back="" ttime="11:25 a" utcOffset="-05" StartTee="1"/>
+      <rankings>
+        <ranking type="money" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="point" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="money" id="109" name="Money Leaders" phase="Regular" startvalue="$0" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="money" id="110" name="Career Money Leaders" phase="Regular" startvalue="$33,675,219" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="point" id="02394" name="FedExCup Regular Season Points" phase="Regular" startvalue="0.000" startrank="207" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort="" trailing="681.333"/>
+        <ranking type="point" id="" name="FedExCup Regular Season Points - Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort="" trailing="681.333"/>
+        <ranking type="money" id="02396" name="FedExCup Bonus Money" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="0" projranktied="" projsort=""/>
+        <ranking type="point" id="02395" name="FedExCup Playoffs Points" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort=""/>
+      </rankings>
+    </Player>
+    <Player PID="24781" Lname="Mahan" Fname="Hunter" FInit="H" FreezeName="MAHAN" StrPos="" CurPos="" CurRnd="1" CurParRel="E" TournParRel="E" TournStrk="0" Thru="" MnyRnk="33" TTime="11:25 a" ProjMny="" SortIndex="2" CrsCode="754" ShortName="H" isAm="No" YTDFedExPts="166" YTDFedExRnk="34" YTDFedExTrailing="516" YTDFedExTrailingPrj="516" BonusMoneyPrj="$0.00" YTDFedExPtsPrj="166" YTDFedExRnkPrj="34" EVTFedExPts="0">
+      <Rnd CrsCode="754" Num="1" ParRel="E" Thru="" front="" back="" ttime="11:25 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="2" ParRel="E" Thru="" front="" back="" ttime="11:25 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="3" ParRel="E" Thru="" front="" back="" ttime="11:25 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="4" ParRel="E" Thru="" front="" back="" ttime="11:25 a" utcOffset="-05" StartTee="1"/>
+      <rankings>
+        <ranking type="money" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="point" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="money" id="109" name="Money Leaders" phase="Regular" startvalue="$339,100" startrank="33" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="money" id="110" name="Career Money Leaders" phase="Regular" startvalue="$28,196,140" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="point" id="02394" name="FedExCup Regular Season Points" phase="Regular" startvalue="165.500" startrank="34" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort="" trailing="515.833"/>
+        <ranking type="point" id="" name="FedExCup Regular Season Points - Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="165.500" projrank="34" projranktied="" projsort="" trailing="515.833"/>
+        <ranking type="money" id="02396" name="FedExCup Bonus Money" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="0" projranktied="" projsort=""/>
+        <ranking type="point" id="02395" name="FedExCup Playoffs Points" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort=""/>
+      </rankings>
+    </Player>
+    <Player PID="25572" Lname="McDowell" Fname="Graeme" FInit="G" FreezeName="MCDOWEL" StrPos="" CurPos="" CurRnd="1" CurParRel="E" TournParRel="E" TournStrk="0" Thru="" MnyRnk="24" TTime="11:35 a" ProjMny="" SortIndex="3" CrsCode="754" ShortName="G" isAm="No" YTDFedExPts="152" YTDFedExRnk="39" YTDFedExTrailing="530" YTDFedExTrailingPrj="530" BonusMoneyPrj="$0.00" YTDFedExPtsPrj="152" YTDFedExRnkPrj="39" EVTFedExPts="0">
+      <Rnd CrsCode="754" Num="1" ParRel="E" Thru="" front="" back="" ttime="11:35 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="2" ParRel="E" Thru="" front="" back="" ttime="11:35 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="3" ParRel="E" Thru="" front="" back="" ttime="11:35 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="4" ParRel="E" Thru="" front="" back="" ttime="11:35 a" utcOffset="-05" StartTee="1"/>
+      <rankings>
+        <ranking type="money" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="point" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="money" id="109" name="Money Leaders" phase="Regular" startvalue="$381,667" startrank="24" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="money" id="110" name="Career Money Leaders" phase="Regular" startvalue="$11,814,783" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="point" id="02394" name="FedExCup Regular Season Points" phase="Regular" startvalue="151.667" startrank="39" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort="" trailing="529.666"/>
+        <ranking type="point" id="" name="FedExCup Regular Season Points - Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="151.667" projrank="39" projranktied="" projsort="" trailing="529.666"/>
+        <ranking type="money" id="02396" name="FedExCup Bonus Money" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="0" projranktied="" projsort=""/>
+        <ranking type="point" id="02395" name="FedExCup Playoffs Points" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort=""/>
+      </rankings>
+    </Player>
+    <Player PID="23108" Lname="Kuchar" Fname="Matt" FInit="M" FreezeName="KUCHAR" StrPos="" CurPos="" CurRnd="1" CurParRel="E" TournParRel="E" TournStrk="0" Thru="" MnyRnk="95" TTime="11:35 a" ProjMny="" SortIndex="4" CrsCode="754" ShortName="M" isAm="No" YTDFedExPts="93" YTDFedExRnk="85" YTDFedExTrailing="589" YTDFedExTrailingPrj="589" BonusMoneyPrj="$0.00" YTDFedExPtsPrj="93" YTDFedExRnkPrj="85" EVTFedExPts="0">
+      <Rnd CrsCode="754" Num="1" ParRel="E" Thru="" front="" back="" ttime="11:35 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="2" ParRel="E" Thru="" front="" back="" ttime="11:35 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="3" ParRel="E" Thru="" front="" back="" ttime="11:35 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="4" ParRel="E" Thru="" front="" back="" ttime="11:35 a" utcOffset="-05" StartTee="1"/>
+      <rankings>
+        <ranking type="money" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="point" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="money" id="109" name="Money Leaders" phase="Regular" startvalue="$109,160" startrank="95" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="money" id="110" name="Career Money Leaders" phase="Regular" startvalue="$31,220,703" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="point" id="02394" name="FedExCup Regular Season Points" phase="Regular" startvalue="92.500" startrank="85" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort="" trailing="588.833"/>
+        <ranking type="point" id="" name="FedExCup Regular Season Points - Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="92.500" projrank="85" projranktied="" projsort="" trailing="588.833"/>
+        <ranking type="money" id="02396" name="FedExCup Bonus Money" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="0" projranktied="" projsort=""/>
+        <ranking type="point" id="02395" name="FedExCup Playoffs Points" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort=""/>
+      </rankings>
+    </Player>
+    <Player PID="06527" Lname="Stricker" Fname="Steve" FInit="S" FreezeName="STRICKE" StrPos="" CurPos="" CurRnd="1" CurParRel="E" TournParRel="E" TournStrk="0" Thru="" MnyRnk="0" TTime="11:45 a" ProjMny="" SortIndex="5" CrsCode="754" ShortName="S" isAm="No" YTDFedExPts="0" YTDFedExRnk="207" YTDFedExTrailing="681" YTDFedExTrailingPrj="681" BonusMoneyPrj="$0.00" YTDFedExPtsPrj="0" YTDFedExRnkPrj="0" EVTFedExPts="0">
+      <Rnd CrsCode="754" Num="1" ParRel="E" Thru="" front="" back="" ttime="11:45 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="2" ParRel="E" Thru="" front="" back="" ttime="11:45 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="3" ParRel="E" Thru="" front="" back="" ttime="11:45 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="4" ParRel="E" Thru="" front="" back="" ttime="11:45 a" utcOffset="-05" StartTee="1"/>
+      <rankings>
+        <ranking type="money" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="point" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="money" id="109" name="Money Leaders" phase="Regular" startvalue="$0" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="money" id="110" name="Career Money Leaders" phase="Regular" startvalue="$40,674,840" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="point" id="02394" name="FedExCup Regular Season Points" phase="Regular" startvalue="0.000" startrank="207" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort="" trailing="681.333"/>
+        <ranking type="point" id="" name="FedExCup Regular Season Points - Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort="" trailing="681.333"/>
+        <ranking type="money" id="02396" name="FedExCup Bonus Money" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="0" projranktied="" projsort=""/>
+        <ranking type="point" id="02395" name="FedExCup Playoffs Points" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort=""/>
+      </rankings>
+    </Player>
+    <Player PID="33141" Lname="Bradley" Fname="Keegan" FInit="K" FreezeName="BRADLEY" StrPos="" CurPos="" CurRnd="1" CurParRel="E" TournParRel="E" TournStrk="0" Thru="" MnyRnk="157" TTime="11:45 a" ProjMny="" SortIndex="6" CrsCode="754" ShortName="K" isAm="No" YTDFedExPts="5" YTDFedExRnk="197" YTDFedExTrailing="676" YTDFedExTrailingPrj="676" BonusMoneyPrj="$0.00" YTDFedExPtsPrj="5" YTDFedExRnkPrj="197" EVTFedExPts="0">
+      <Rnd CrsCode="754" Num="1" ParRel="E" Thru="" front="" back="" ttime="11:45 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="2" ParRel="E" Thru="" front="" back="" ttime="11:45 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="3" ParRel="E" Thru="" front="" back="" ttime="11:45 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="4" ParRel="E" Thru="" front="" back="" ttime="11:45 a" utcOffset="-05" StartTee="1"/>
+      <rankings>
+        <ranking type="money" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="point" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="money" id="109" name="Money Leaders" phase="Regular" startvalue="$42,500" startrank="157" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="money" id="110" name="Career Money Leaders" phase="Regular" startvalue="$14,177,208" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="point" id="02394" name="FedExCup Regular Season Points" phase="Regular" startvalue="5.000" startrank="197" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort="" trailing="676.333"/>
+        <ranking type="point" id="" name="FedExCup Regular Season Points - Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="5.000" projrank="197" projranktied="" projsort="" trailing="676.333"/>
+        <ranking type="money" id="02396" name="FedExCup Bonus Money" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="0" projranktied="" projsort=""/>
+        <ranking type="point" id="02395" name="FedExCup Playoffs Points" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort=""/>
+      </rankings>
+    </Player>
+    <Player PID="29420" Lname="Horschel" Fname="Billy" FInit="B" FreezeName="HORSCHE" StrPos="" CurPos="" CurRnd="1" CurParRel="E" TournParRel="E" TournStrk="0" Thru="" MnyRnk="117" TTime="11:55 a" ProjMny="" SortIndex="7" CrsCode="754" ShortName="B" isAm="No" YTDFedExPts="34" YTDFedExRnk="156" YTDFedExTrailing="647" YTDFedExTrailingPrj="647" BonusMoneyPrj="$0.00" YTDFedExPtsPrj="34" YTDFedExRnkPrj="156" EVTFedExPts="0">
+      <Rnd CrsCode="754" Num="1" ParRel="E" Thru="" front="" back="" ttime="11:55 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="2" ParRel="E" Thru="" front="" back="" ttime="11:55 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="3" ParRel="E" Thru="" front="" back="" ttime="11:55 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="4" ParRel="E" Thru="" front="" back="" ttime="11:55 a" utcOffset="-05" StartTee="1"/>
+      <rankings>
+        <ranking type="money" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="point" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="money" id="109" name="Money Leaders" phase="Regular" startvalue="$74,100" startrank="117" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="money" id="110" name="Career Money Leaders" phase="Regular" startvalue="$9,409,791" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="point" id="02394" name="FedExCup Regular Season Points" phase="Regular" startvalue="34.420" startrank="156" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort="" trailing="646.913"/>
+        <ranking type="point" id="" name="FedExCup Regular Season Points - Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="34.420" projrank="156" projranktied="" projsort="" trailing="646.913"/>
+        <ranking type="money" id="02396" name="FedExCup Bonus Money" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="0" projranktied="" projsort=""/>
+        <ranking type="point" id="02395" name="FedExCup Playoffs Points" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort=""/>
+      </rankings>
+    </Player>
+    <Player PID="30926" Lname="Kirk" Fname="Chris" FInit="C" FreezeName="KIRK" StrPos="" CurPos="" CurRnd="1" CurParRel="E" TournParRel="E" TournStrk="0" Thru="" MnyRnk="38" TTime="11:55 a" ProjMny="" SortIndex="8" CrsCode="754" ShortName="C" isAm="No" YTDFedExPts="165" YTDFedExRnk="35" YTDFedExTrailing="516" YTDFedExTrailingPrj="516" BonusMoneyPrj="$0.00" YTDFedExPtsPrj="165" YTDFedExRnkPrj="35" EVTFedExPts="0">
+      <Rnd CrsCode="754" Num="1" ParRel="E" Thru="" front="" back="" ttime="11:55 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="2" ParRel="E" Thru="" front="" back="" ttime="11:55 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="3" ParRel="E" Thru="" front="" back="" ttime="11:55 a" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="4" ParRel="E" Thru="" front="" back="" ttime="11:55 a" utcOffset="-05" StartTee="1"/>
+      <rankings>
+        <ranking type="money" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="point" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="money" id="109" name="Money Leaders" phase="Regular" startvalue="$310,333" startrank="38" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="money" id="110" name="Career Money Leaders" phase="Regular" startvalue="$10,072,771" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="point" id="02394" name="FedExCup Regular Season Points" phase="Regular" startvalue="165.083" startrank="35" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort="" trailing="516.250"/>
+        <ranking type="point" id="" name="FedExCup Regular Season Points - Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="165.083" projrank="35" projranktied="" projsort="" trailing="516.250"/>
+        <ranking type="money" id="02396" name="FedExCup Bonus Money" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="0" projranktied="" projsort=""/>
+        <ranking type="point" id="02395" name="FedExCup Playoffs Points" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort=""/>
+      </rankings>
+    </Player>
+    <Player PID="32839" Lname="Matsuyama" Fname="Hideki" FInit="H" FreezeName="MATSUYA" StrPos="" CurPos="" CurRnd="1" CurParRel="E" TournParRel="E" TournStrk="0" Thru="" MnyRnk="19" TTime="12:05 p" ProjMny="" SortIndex="9" CrsCode="754" ShortName="H" isAm="No" YTDFedExPts="265" YTDFedExRnk="16" YTDFedExTrailing="417" YTDFedExTrailingPrj="417" BonusMoneyPrj="$0.00" YTDFedExPtsPrj="265" YTDFedExRnkPrj="16" EVTFedExPts="0">
+      <Rnd CrsCode="754" Num="1" ParRel="E" Thru="" front="" back="" ttime="12:05 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="2" ParRel="E" Thru="" front="" back="" ttime="12:05 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="3" ParRel="E" Thru="" front="" back="" ttime="12:05 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="4" ParRel="E" Thru="" front="" back="" ttime="12:05 p" utcOffset="-05" StartTee="1"/>
+      <rankings>
+        <ranking type="money" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="point" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="money" id="109" name="Money Leaders" phase="Regular" startvalue="$536,833" startrank="19" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="money" id="110" name="Career Money Leaders" phase="Regular" startvalue="$4,064,784" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="point" id="02394" name="FedExCup Regular Season Points" phase="Regular" startvalue="264.833" startrank="16" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort="" trailing="416.500"/>
+        <ranking type="point" id="" name="FedExCup Regular Season Points - Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="264.833" projrank="16" projranktied="" projsort="" trailing="416.500"/>
+        <ranking type="money" id="02396" name="FedExCup Bonus Money" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="0" projranktied="" projsort=""/>
+        <ranking type="point" id="02395" name="FedExCup Playoffs Points" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort=""/>
+      </rankings>
+    </Player>
+    <Player PID="25632" Lname="Walker" Fname="Jimmy" FInit="J" FreezeName="WALKER" StrPos="" CurPos="" CurRnd="1" CurParRel="E" TournParRel="E" TournStrk="0" Thru="" MnyRnk="34" TTime="12:05 p" ProjMny="" SortIndex="10" CrsCode="754" ShortName="J" isAm="No" YTDFedExPts="157" YTDFedExRnk="37" YTDFedExTrailing="525" YTDFedExTrailingPrj="525" BonusMoneyPrj="$0.00" YTDFedExPtsPrj="157" YTDFedExRnkPrj="37" EVTFedExPts="0">
+      <Rnd CrsCode="754" Num="1" ParRel="E" Thru="" front="" back="" ttime="12:05 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="2" ParRel="E" Thru="" front="" back="" ttime="12:05 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="3" ParRel="E" Thru="" front="" back="" ttime="12:05 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="4" ParRel="E" Thru="" front="" back="" ttime="12:05 p" utcOffset="-05" StartTee="1"/>
+      <rankings>
+        <ranking type="money" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="point" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="money" id="109" name="Money Leaders" phase="Regular" startvalue="$330,607" startrank="34" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="money" id="110" name="Career Money Leaders" phase="Regular" startvalue="$13,416,052" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="point" id="02394" name="FedExCup Regular Season Points" phase="Regular" startvalue="156.500" startrank="37" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort="" trailing="524.833"/>
+        <ranking type="point" id="" name="FedExCup Regular Season Points - Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="156.500" projrank="37" projranktied="" projsort="" trailing="524.833"/>
+        <ranking type="money" id="02396" name="FedExCup Bonus Money" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="0" projranktied="" projsort=""/>
+        <ranking type="point" id="02395" name="FedExCup Playoffs Points" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort=""/>
+      </rankings>
+    </Player>
+    <Player PID="08793" Lname="Woods" Fname="Tiger" FInit="T" FreezeName="WOODS" StrPos="" CurPos="" CurRnd="1" CurParRel="E" TournParRel="E" TournStrk="0" Thru="" MnyRnk="0" TTime="12:15 p" ProjMny="" SortIndex="11" CrsCode="754" ShortName="T" isAm="No" YTDFedExPts="0" YTDFedExRnk="207" YTDFedExTrailing="681" YTDFedExTrailingPrj="681" BonusMoneyPrj="$0.00" YTDFedExPtsPrj="0" YTDFedExRnkPrj="0" EVTFedExPts="0">
+      <Rnd CrsCode="754" Num="1" ParRel="E" Thru="" front="" back="" ttime="12:15 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="2" ParRel="E" Thru="" front="" back="" ttime="12:15 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="3" ParRel="E" Thru="" front="" back="" ttime="12:15 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="4" ParRel="E" Thru="" front="" back="" ttime="12:15 p" utcOffset="-05" StartTee="1"/>
+      <rankings>
+        <ranking type="money" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="point" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="money" id="109" name="Money Leaders" phase="Regular" startvalue="$0" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="money" id="110" name="Career Money Leaders" phase="Regular" startvalue="$109,612,414" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="point" id="02394" name="FedExCup Regular Season Points" phase="Regular" startvalue="0.000" startrank="207" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort="" trailing="681.333"/>
+        <ranking type="point" id="" name="FedExCup Regular Season Points - Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort="" trailing="681.333"/>
+        <ranking type="money" id="02396" name="FedExCup Bonus Money" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="0" projranktied="" projsort=""/>
+        <ranking type="point" id="02395" name="FedExCup Playoffs Points" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort=""/>
+      </rankings>
+    </Player>
+    <Player PID="28089" Lname="Day" Fname="Jason" FInit="J" FreezeName="DAY" StrPos="" CurPos="" CurRnd="1" CurParRel="E" TournParRel="E" TournStrk="0" Thru="" MnyRnk="0" TTime="12:15 p" ProjMny="" SortIndex="12" CrsCode="754" ShortName="J" isAm="No" YTDFedExPts="0" YTDFedExRnk="207" YTDFedExTrailing="681" YTDFedExTrailingPrj="681" BonusMoneyPrj="$0.00" YTDFedExPtsPrj="0" YTDFedExRnkPrj="0" EVTFedExPts="0">
+      <Rnd CrsCode="754" Num="1" ParRel="E" Thru="" front="" back="" ttime="12:15 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="2" ParRel="E" Thru="" front="" back="" ttime="12:15 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="3" ParRel="E" Thru="" front="" back="" ttime="12:15 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="4" ParRel="E" Thru="" front="" back="" ttime="12:15 p" utcOffset="-05" StartTee="1"/>
+      <rankings>
+        <ranking type="money" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="point" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="money" id="109" name="Money Leaders" phase="Regular" startvalue="$0" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="money" id="110" name="Career Money Leaders" phase="Regular" startvalue="$17,617,930" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="point" id="02394" name="FedExCup Regular Season Points" phase="Regular" startvalue="0.000" startrank="207" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort="" trailing="681.333"/>
+        <ranking type="point" id="" name="FedExCup Regular Season Points - Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort="" trailing="681.333"/>
+        <ranking type="money" id="02396" name="FedExCup Bonus Money" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="0" projranktied="" projsort=""/>
+        <ranking type="point" id="02395" name="FedExCup Playoffs Points" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort=""/>
+      </rankings>
+    </Player>
+    <Player PID="25804" Lname="Watson" Fname="Bubba" FInit="B" FreezeName="WATSON" StrPos="" CurPos="" CurRnd="1" CurParRel="E" TournParRel="E" TournStrk="0" Thru="" MnyRnk="1" TTime="12:25 p" ProjMny="" SortIndex="13" CrsCode="754" ShortName="B" isAm="No" YTDFedExPts="550" YTDFedExRnk="4" YTDFedExTrailing="131" YTDFedExTrailingPrj="131" BonusMoneyPrj="$0.00" YTDFedExPtsPrj="550" YTDFedExRnkPrj="4" EVTFedExPts="0">
+      <Rnd CrsCode="754" Num="1" ParRel="E" Thru="" front="" back="" ttime="12:25 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="2" ParRel="E" Thru="" front="" back="" ttime="12:25 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="3" ParRel="E" Thru="" front="" back="" ttime="12:25 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="4" ParRel="E" Thru="" front="" back="" ttime="12:25 p" utcOffset="-05" StartTee="1"/>
+      <rankings>
+        <ranking type="money" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="point" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="money" id="109" name="Money Leaders" phase="Regular" startvalue="$1,400,000" startrank="1" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="money" id="110" name="Career Money Leaders" phase="Regular" startvalue="$26,455,896" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="point" id="02394" name="FedExCup Regular Season Points" phase="Regular" startvalue="550.000" startrank="4" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort="" trailing="131.333"/>
+        <ranking type="point" id="" name="FedExCup Regular Season Points - Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="550.000" projrank="4" projranktied="" projsort="" trailing="131.333"/>
+        <ranking type="money" id="02396" name="FedExCup Bonus Money" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="0" projranktied="" projsort=""/>
+        <ranking type="point" id="02395" name="FedExCup Playoffs Points" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort=""/>
+      </rankings>
+    </Player>
+    <Player PID="32102" Lname="Fowler" Fname="Rickie" FInit="R" FreezeName="FOWLER" StrPos="" CurPos="" CurRnd="1" CurParRel="E" TournParRel="E" TournStrk="0" Thru="" MnyRnk="24" TTime="12:25 p" ProjMny="" SortIndex="14" CrsCode="754" ShortName="R" isAm="No" YTDFedExPts="152" YTDFedExRnk="39" YTDFedExTrailing="530" YTDFedExTrailingPrj="530" BonusMoneyPrj="$0.00" YTDFedExPtsPrj="152" YTDFedExRnkPrj="39" EVTFedExPts="0">
+      <Rnd CrsCode="754" Num="1" ParRel="E" Thru="" front="" back="" ttime="12:25 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="2" ParRel="E" Thru="" front="" back="" ttime="12:25 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="3" ParRel="E" Thru="" front="" back="" ttime="12:25 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="4" ParRel="E" Thru="" front="" back="" ttime="12:25 p" utcOffset="-05" StartTee="1"/>
+      <rankings>
+        <ranking type="money" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="point" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="money" id="109" name="Money Leaders" phase="Regular" startvalue="$381,667" startrank="24" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="money" id="110" name="Career Money Leaders" phase="Regular" startvalue="$15,583,697" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="point" id="02394" name="FedExCup Regular Season Points" phase="Regular" startvalue="151.667" startrank="39" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort="" trailing="529.666"/>
+        <ranking type="point" id="" name="FedExCup Regular Season Points - Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="151.667" projrank="39" projranktied="" projsort="" trailing="529.666"/>
+        <ranking type="money" id="02396" name="FedExCup Bonus Money" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="0" projranktied="" projsort=""/>
+        <ranking type="point" id="02395" name="FedExCup Playoffs Points" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort=""/>
+      </rankings>
+    </Player>
+    <Player PID="34046" Lname="Spieth" Fname="Jordan" FInit="J" FreezeName="SPIETH" StrPos="" CurPos="" CurRnd="1" CurParRel="E" TournParRel="E" TournStrk="0" Thru="" MnyRnk="133" TTime="12:35 p" ProjMny="" SortIndex="15" CrsCode="754" ShortName="J" isAm="No" YTDFedExPts="34" YTDFedExRnk="158" YTDFedExTrailing="648" YTDFedExTrailingPrj="648" BonusMoneyPrj="$0.00" YTDFedExPtsPrj="34" YTDFedExRnkPrj="158" EVTFedExPts="0">
+      <Rnd CrsCode="754" Num="1" ParRel="E" Thru="" front="" back="" ttime="12:35 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="2" ParRel="E" Thru="" front="" back="" ttime="12:35 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="3" ParRel="E" Thru="" front="" back="" ttime="12:35 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="4" ParRel="E" Thru="" front="" back="" ttime="12:35 p" utcOffset="-05" StartTee="1"/>
+      <rankings>
+        <ranking type="money" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="point" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="money" id="109" name="Money Leaders" phase="Regular" startvalue="$61,500" startrank="133" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="money" id="110" name="Career Money Leaders" phase="Regular" startvalue="$8,284,068" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="point" id="02394" name="FedExCup Regular Season Points" phase="Regular" startvalue="33.500" startrank="158" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort="" trailing="647.833"/>
+        <ranking type="point" id="" name="FedExCup Regular Season Points - Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="33.500" projrank="158" projranktied="" projsort="" trailing="647.833"/>
+        <ranking type="money" id="02396" name="FedExCup Bonus Money" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="0" projranktied="" projsort=""/>
+        <ranking type="point" id="02395" name="FedExCup Playoffs Points" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort=""/>
+      </rankings>
+    </Player>
+    <Player PID="34360" Lname="Reed" Fname="Patrick" FInit="P" FreezeName="REED" StrPos="" CurPos="" CurRnd="1" CurParRel="E" TournParRel="E" TournStrk="0" Thru="" MnyRnk="89" TTime="12:35 p" ProjMny="" SortIndex="16" CrsCode="754" ShortName="P" isAm="No" YTDFedExPts="91" YTDFedExRnk="86" YTDFedExTrailing="591" YTDFedExTrailingPrj="591" BonusMoneyPrj="$0.00" YTDFedExPtsPrj="91" YTDFedExRnkPrj="86" EVTFedExPts="0">
+      <Rnd CrsCode="754" Num="1" ParRel="E" Thru="" front="" back="" ttime="12:35 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="2" ParRel="E" Thru="" front="" back="" ttime="12:35 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="3" ParRel="E" Thru="" front="" back="" ttime="12:35 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="4" ParRel="E" Thru="" front="" back="" ttime="12:35 p" utcOffset="-05" StartTee="1"/>
+      <rankings>
+        <ranking type="money" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="point" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="money" id="109" name="Money Leaders" phase="Regular" startvalue="$126,700" startrank="89" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="money" id="110" name="Career Money Leaders" phase="Regular" startvalue="$6,437,330" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="point" id="02394" name="FedExCup Regular Season Points" phase="Regular" startvalue="90.500" startrank="86" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort="" trailing="590.833"/>
+        <ranking type="point" id="" name="FedExCup Regular Season Points - Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="90.500" projrank="86" projranktied="" projsort="" trailing="590.833"/>
+        <ranking type="money" id="02396" name="FedExCup Bonus Money" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="0" projranktied="" projsort=""/>
+        <ranking type="point" id="02395" name="FedExCup Playoffs Points" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort=""/>
+      </rankings>
+    </Player>
+    <Player PID="21528" Lname="Stenson" Fname="Henrik" FInit="H" FreezeName="STENSON" StrPos="" CurPos="" CurRnd="1" CurParRel="E" TournParRel="E" TournStrk="0" Thru="" MnyRnk="118" TTime="12:45 p" ProjMny="" SortIndex="17" CrsCode="754" ShortName="H" isAm="No" YTDFedExPts="46" YTDFedExRnk="134" YTDFedExTrailing="636" YTDFedExTrailingPrj="636" BonusMoneyPrj="$0.00" YTDFedExPtsPrj="46" YTDFedExRnkPrj="134" EVTFedExPts="0">
+      <Rnd CrsCode="754" Num="1" ParRel="E" Thru="" front="" back="" ttime="12:45 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="2" ParRel="E" Thru="" front="" back="" ttime="12:45 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="3" ParRel="E" Thru="" front="" back="" ttime="12:45 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="4" ParRel="E" Thru="" front="" back="" ttime="12:45 p" utcOffset="-05" StartTee="1"/>
+      <rankings>
+        <ranking type="money" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="point" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="money" id="109" name="Money Leaders" phase="Regular" startvalue="$73,500" startrank="118" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="money" id="110" name="Career Money Leaders" phase="Regular" startvalue="$16,480,020" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="point" id="02394" name="FedExCup Regular Season Points" phase="Regular" startvalue="45.500" startrank="134" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort="" trailing="635.833"/>
+        <ranking type="point" id="" name="FedExCup Regular Season Points - Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="45.500" projrank="134" projranktied="" projsort="" trailing="635.833"/>
+        <ranking type="money" id="02396" name="FedExCup Bonus Money" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="0" projranktied="" projsort=""/>
+        <ranking type="point" id="02395" name="FedExCup Playoffs Points" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort=""/>
+      </rankings>
+    </Player>
+    <Player PID="22405" Lname="Rose" Fname="Justin" FInit="J" FreezeName="ROSE" StrPos="" CurPos="" CurRnd="1" CurParRel="E" TournParRel="E" TournStrk="0" Thru="" MnyRnk="148" TTime="12:45 p" ProjMny="" SortIndex="18" CrsCode="754" ShortName="J" isAm="No" YTDFedExPts="21" YTDFedExRnk="175" YTDFedExTrailing="660" YTDFedExTrailingPrj="660" BonusMoneyPrj="$0.00" YTDFedExPtsPrj="21" YTDFedExRnkPrj="175" EVTFedExPts="0">
+      <Rnd CrsCode="754" Num="1" ParRel="E" Thru="" front="" back="" ttime="12:45 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="2" ParRel="E" Thru="" front="" back="" ttime="12:45 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="3" ParRel="E" Thru="" front="" back="" ttime="12:45 p" utcOffset="-05" StartTee="1"/>
+      <Rnd CrsCode="754" Num="4" ParRel="E" Thru="" front="" back="" ttime="12:45 p" utcOffset="-05" StartTee="1"/>
+      <rankings>
+        <ranking type="money" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="point" id="" name="Event Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="1" projranktied="Yes" projsort=""/>
+        <ranking type="money" id="109" name="Money Leaders" phase="Regular" startvalue="$49,300" startrank="148" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="money" id="110" name="Career Money Leaders" phase="Regular" startvalue="$29,253,833" startrank="" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort=""/>
+        <ranking type="point" id="02394" name="FedExCup Regular Season Points" phase="Regular" startvalue="21.000" startrank="175" startranktied="" startsort="" projvalue="" projrank="" projranktied="" projsort="" trailing="660.333"/>
+        <ranking type="point" id="" name="FedExCup Regular Season Points - Projected" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="21.000" projrank="175" projranktied="" projsort="" trailing="660.333"/>
+        <ranking type="money" id="02396" name="FedExCup Bonus Money" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="$0" projrank="0" projranktied="" projsort=""/>
+        <ranking type="point" id="02395" name="FedExCup Playoffs Points" phase="Regular" startvalue="" startrank="" startranktied="" startsort="" projvalue="0.000" projrank="0" projranktied="" projsort=""/>
+      </rankings>
+    </Player>
+  </Players>
+</Tourn>
