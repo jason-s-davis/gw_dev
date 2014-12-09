@@ -1,9 +1,9 @@
 // var angular = require('angular');
-// var $ = require('jquery-browserify');
+var $ = require('jquery-browserify');
 // var bootstrap = require('bootstrap');
-// require('jquery-mousewheel')($);
-// var jQuery = $;
-// require('../../libs/scrollbar/jquery.mCustomScrollbar');
+require('jquery-mousewheel')($);
+var jQuery = $;
+require('../../libs/scrollbar/jquery.mCustomScrollbar');
 // require('../../libs/slick/slick.min');
 require('./infscr');
 require('./ads');
