@@ -16,8 +16,8 @@ require('./scores');
 /// Sub Nav Area Functionality
 var closer;
 
-function SubNav(event){
 
+function SubNav(event){
 	window.clearTimeout(closer);
 	
 	var target = $(event.target).attr('targ')
@@ -34,8 +34,8 @@ function SubNav(event){
 	$('#' + target + '-nav').css('display', 'block');
 
 	// slide the main content over to the right
-	$('#MainContent').css('margin-left', '320px');
-
+	$('#MainContent').css('left', '320px');
+	BackgroundPosition(320);
 }
 
 // activate SubNav on mouseover or click of main nav
@@ -43,13 +43,14 @@ $("#MainNav").on("click mouseover", "ul li", SubNav);
 
 
 function CloseSubNav (event) {
-	var mainWidth = $('#MainContent').css('margin-left');
+	var mainWidth = $('#MainContent').css('left');
 	mainWidth = mainWidth.replace('px', '');
 	mainWidth = parseInt(mainWidth);
 	// if the nav bar is open close the sub nav
 	if (mainWidth >= 175) {
 		closer = window.setTimeout(function () {
-			$('#MainContent').css('margin-left', '175px');
+			$('#MainContent').css('left', '175px');
+			BackgroundPosition(175);
 		}, 500);
 	}
 }
@@ -58,8 +59,20 @@ function CloseSubNav (event) {
 // if the mouse enters the main content close the subnav
 $('main').on('mouseenter', CloseSubNav);
 
-function SideBar(){
 
+function ClickMenu(event) {
+	if ($('#MainContent').css('left') == '30px') {
+		$('#MainContent').css('left','175px');
+		BackgroundPosition(175);
+	} else {
+		$('#MainContent').css('left','30px');
+		BackgroundPosition(30);
+	}
+}
+
+$('.shownav').on('click', ClickMenu);
+
+function SideBar(){
 	if($("#sidebar-ad-placeholder").height() < 250){
 		ad_offset = 250
 	} else {
@@ -74,35 +87,33 @@ function HeaderHeight() {
 	$('.header-push').css('padding-top', $('#HeaderContent').height() + 10);
 }
 
+function BackgroundPosition(mainmargin) {
+	var mainwidth = $('#MainContent').width();
+	var headercontent = $('#HeaderContent').height();
+	var combinedwidth = mainmargin + parseInt(mainwidth);
+	var combinedpos = combinedwidth + 'px ' + (headercontent + 10) + 'px'
+	//console.log(combinedpos);
+	$('body, html').css('background-position', combinedpos);
+}
 
 HeaderHeight();
 SideBar();
+BackgroundPosition($('#MainContent').position().left);
 
-$(window).resize(function() {
+$(window).resize(function(event) {
 	SideBar();
 	HeaderHeight();
+	BackgroundPosition($('#MainContent').position().left);
 })
 
 /**  Keep the sidebar up top **/
-$(window).scroll(function(){
+$(window).scroll(function(event){
 $("#SideBar")
 	.stop()
 	SideBar();
 });
 
 
-/*******************************************************/
-
-// Move Content Area left and right on click on menu button
-$( ".shownav" ).click(function() {
-
-	// If nav closed, open it.
-	if ($('#MainContent').css('margin-left') == '30px') {
-		$('#MainContent').css('margin-left','175px');
-	} else {
-		$('#MainContent').css('margin-left','30px');
-	}
-});
 
 /*******************************************************/
 

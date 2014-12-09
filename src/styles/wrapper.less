@@ -4,7 +4,16 @@
 	padding-top: 175px;
 }
 
-body { height: 100%; width: 100%; overflow-x: hidden; background-color: @gw-black }
+body { height: 100%; width: 100%; overflow-x: hidden; }
+
+body, html { 
+	background-color: @gw-white !important;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+ }
 
 /* Header Area */
 
@@ -49,7 +58,7 @@ body { height: 100%; width: 100%; overflow-x: hidden; background-color: @gw-blac
 	width: 100%; 
 	min-height: 100%;
 	background-color: @gw-white; 
-	margin-left: 30px;
+	left: 30px;
 	-webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
@@ -168,7 +177,7 @@ nav {
 @media (min-width: 1200px) {
 	.left-frame { max-width: 985px; /* margin: 0px -15px 0px -15px; padding: 0px 15px; */ }
 	.left-frame-plus { max-width: 1130px !important }
-	#MainContent { margin-left: 175px; }
+	#MainContent { left: 175px; }
 }
 
 /* Portrait tablet to landscape and desktop */

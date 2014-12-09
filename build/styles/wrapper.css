@@ -36,7 +36,15 @@ body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  background-color: #000000;
+}
+body,
+html {
+  background-color: #ffffff !important;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 /* Header Area */
 #HeaderContent {
@@ -89,7 +97,7 @@ body {
   width: 100%;
   min-height: 100%;
   background-color: #ffffff;
-  margin-left: 30px;
+  left: 30px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -292,7 +300,7 @@ nav {
     max-width: 1130px !important;
   }
   #MainContent {
-    margin-left: 175px;
+    left: 175px;
   }
 }
 /* Portrait tablet to landscape and desktop */
