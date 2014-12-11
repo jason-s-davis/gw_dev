@@ -9,7 +9,6 @@
 	// pga / nwid / chmp scoring will come from xml documents on rankings.golfweek.com
 	// college / amateur / junior scoring will come from golfstat
 
-
 	// LiveScore model
 
 	function LiveScore (frame) {
