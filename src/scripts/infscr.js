@@ -225,5 +225,4 @@ infscr.controller('infScrollCtrl', ['$scope', '$window', 'getStoryList', 'getSto
   window.addEventListener('keydown', checkKeys);
 })()
 
-
 })(angular);

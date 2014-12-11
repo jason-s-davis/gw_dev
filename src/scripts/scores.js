@@ -1,4 +1,4 @@
-(function (angular, $) {
+(function ($) {
 	
 	// this is the live scoring app for the widget on the top right
 	// live scoring will match as closely as possible the output from the
@@ -10,47 +10,96 @@
 	// college / amateur / junior scoring will come from golfstat
 
 
-	// PGA model
+	// LiveScore model
 
-	// pga data should be the xml data 
-	function PGA (pgadata) {
-		if (pgadata) {
-			this.setData(pgadata);
+	function LiveScore (frame) {
+		// frame should be a url to fetch the data from
+		// frame is here in case a necessary framing is not in place
+		if (frame) {
+			this.framing = frame;
 		}
-		// other standard initializations
+		else {
+			this.setFrame();
+		}
+		// other standard initializations if necessary
 	}
 
-	PGA.prototype = {
-		setData: function (pgadata) {
-			angular.extend(this, pgadata);
+	LiveScore.prototype = {
+		setData: function (scoreData) {
+			this.xhrData = scoreData;
 		},
-		// Load will fetch the data from the pga xml
+		// The possible frames / urls for live score data
+		frames: {
+			"GW-PGATour": "http://rankings.golfweek.com/fetchurl/assets/pga.xml",
+			"GW-WebTour": "http://rankings.golfweek.com/fetchurl/assets/nwid.xml",
+			"GW-ChampTour": "http://rankings.golfweek.com/fetchurl/assets/chmp.xml"
+		},
+		// set the Framing for the score fetch
+		setFrame: function () {
+			var scope = this;
+			var elem = document.getElementById('live_scores');
+			var frame = elem.getAttribute('framing');
+			scope.framing = scope.frames[frame];
+		},
+		// Load will fetch the data from the score xml
 		load: function () {
 			var scope = this;
 			scope.players = [];
 			$.ajax({
 				type: "GET",
-				url:'http://rankings.golfweek.com/fetchurl/assets/pga.xml',
+				// real data
+				// url: scope.framing,
+				// test data
+				url:'./pga1.xml',
 				dataType: 'xml'
-				}).success(function (pgadata) {
-				scope.setData(pgadata);
-				var players = $(pgadata).find('Player');
-				for (var i = players.length - 1; i >= 0; i--) {
-					player = {};
-					player.name = $(players[i]).attr('FInit') + ". " + $(players[i]).attr('Lname');
-					player.current_rank = $(players[i]).attr('CurPos');
-					player.today = $(players[i]).attr('CurParRel');
-					player.overall = $(players[i]).attr('TournParRel');
-					player.thru = $(players[i]).attr('Thru');			
-					scope.players.push(player);
-				};
+				}).success(function (scoreData) {
+					scope.setData(scoreData);
+
+					console.log("%c\n\n*****Jason check the player data when a tournament is live!*****\n\n\n\n", 'color:green');
+					// ** TODO **
+					// Put rankings in when no tours are available
+
+					var players = $(scoreData).find('Player');
+					for (var i = players.length - 1; i >= 0; i--) {
+						player = {};
+						player.playerName = $(players[i]).attr('FInit') + ". " + $(players[i]).attr('Lname');
+						player.currentPos = $(players[i]).attr('CurPos');
+						player.currentPar = $(players[i]).attr('CurParRel');
+						player.tournPar = $(players[i]).attr('TournParRel');
+						player.thru = $(players[i]).attr('Thru');
+						scope.players.push(player);
+						// put the scores on the page if this is the last element
+						if (i === 1) scope.putScores();
+					};
 			});
+		},
+		scoreDiv: function (player) { 
+
+			var	str ='<div class="live_score_row">' + 
+						'<div class="position">' + player.currentPos + '</div>' +
+						'<div class="player">' + player.playerName + '</div>' +
+						'<div class="currentPar">' + player.currentPar + '</div>' +
+						'<div class="tournPar">' + player.tournPar + '</div>' +
+						'<div class="thru">' + player.thru + '</div>' +
+					  '</div>';
+			return str;
+		},
+
+		putScores: function () {
+			var players = this.players;
+			var retString = '';
+			for (var i = players.length - 1; i >= 0; i--) {
+				retString += this.scoreDiv(players[i]) + "\n";
+			};
+
+			var elem = document.getElementById('livescores');
+			elem.innerHTML = retString;
 		}
+
 	}
 
 	
-	var thed = new PGA();
+	var thed = new LiveScore();
 	thed.load();
-	console.log(thed);
 
-})(angular, jQuery);
+})(jQuery);

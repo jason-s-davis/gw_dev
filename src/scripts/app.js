@@ -42,7 +42,12 @@ function CloseSubNav (event) {
 	// if the nav bar is open close the sub nav
 	if (mainWidth >= 175) {
 		closer = window.setTimeout(function () {
+			// remove red from item and link
+			$('#MainNav ul li').removeClass('selected');
+			$('#MainNav ul li a').removeClass('selected');
+			// close the sub nav
 			$('#MainContent').css('left', '175px');
+			// adjust the ad
 			BackgroundPosition(175);
 		}, 500);
 	}
