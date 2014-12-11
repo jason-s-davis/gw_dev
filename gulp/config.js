@@ -55,11 +55,6 @@ module.exports = {
           entries: './src/scripts/app.js',
           dest: dest + '/scripts/',
           outputName: 'app.min.js'
-        },
-        {
-          entries: './src/scripts/infscr.js',
-          dest: dest + '/scripts/',
-          outputName: 'infscr.min.js'
         }
     ]
   }
