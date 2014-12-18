@@ -1,0 +1,163 @@
+(function ($) {
+	
+
+/* toggleFullStory uses jQuery's getJSON call to fetch 
+ * the full story content for the clicked story then 
+ * toggle the blurb / story open / closed
+ *
+ */
+function toggleFullStory (e) {
+	e.preventDefault();
+	
+  // get the clicked url
+  var ref = $(this).find('a').attr('href');
+  var elem = $(this).children('div.hidden')[0];
+
+  var daddy = $(elem).parent();
+
+  if (!(daddy.attr('data-fetch') === 'done')) {
+  	// get the story from url here
+  	$.getJSON('http://golfweek.com' + ref + '?json')
+  		.success(function (data) {
+  			
+  			// set the img src
+  			var img = $(elem).find('img')[0];
+  			$(img).attr('src', data.story[0].photourl);
+
+  			// set the story content
+  			var p = $(elem).find('p.story_content')[0];
+  			$(p).html(data.story[0].body);
+
+        daddy.attr('data-fetch', 'done')
+  		})
+  		.error(function (err) { console.error(err); });
+  }
+
+	/* add loading css stuff here */
+	// this toggles between story and blurb
+	var elems = $(this).children('.row');
+	elems.toggleClass('hidden');
+
+	// this toggles the arrow open / closed
+	var arrow = $($(this).find('div.more-divider')[0]).children('i')[0];
+	$(arrow).toggleClass('fa-arrow-circle-down');
+	$(arrow).toggleClass('fa-arrow-circle-up');
+			
+}
+
+// $('.related-item').on('click.stories', toggleFullStory);
+
+
+// Add the inViewport function to jquery
+$.extend({
+  inViewport: function (/*elem, callback*/) {
+    var el = arguments[0], callback;
+
+    if (el instanceof $) {
+      el = el[0];
+    } else {
+      el = $(el)[0];
+    }
+
+    var rect = el.getBoundingClientRect();
+    var isInViewport = (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+
+    // only element provided
+    if (arguments.length === 1) {
+      return isInViewport;
+    } else if (arguments.length === 2) {
+      callback = arguments[1];
+      return callback(el, isInViewport);
+    }
+  }
+});
+
+
+
+var LOADING = false;
+var load_timer;
+
+function getThisStory (elem, visible) {
+
+  var loadSpan = '<div class="loading_spinner"><span class="loader"><span class="loader-inner"></span></span></div>';
+
+  // if the element is visible 
+  if (visible) {
+    // set the loading indicator to true while loading data
+    LOADING = true;
+
+    /** VISUAL EFFECTS **/
+    // find the row elements to hide during load
+    var elems = $(elem).children('.row');
+
+    // hide the rows
+    $(elems).css('visibility', 'hidden');
+
+    // if the loading spinner div is not present add it
+    if ($(elem).find('.loading_spinner').length < 1) {
+      $(elem).append(loadSpan);
+    }
+
+    /** XHR **/
+    // get the url to fetch
+    var ref = $(elem).find('a').attr('href');
+
+    $.getJSON('http://golfweek.com' + ref + '?json')
+      .success(function (data) {
+        // set the img src of the second image tag (the first is in the blurb)
+        var img = $(elem).find('img')[1];
+        $(img).attr('src', data.story[0].photourl);
+
+        // set the story content (story content p only exists in second row)
+        var p = $(elem).find('p.story_content')[0];
+        $(p).html(data.story[0].body);
+
+        // add marker so this element wont be fetched again
+        $(elem).attr('data-fetch', 'done');
+
+        /** MORE VISUAL STUFF **/
+        // show the new story and remove the loading spinner
+        $(elems).delay(600).css('visibility', 'visible');
+        $('.loading_spinner').delay(600).fadeOut(200).remove();
+
+
+        // toggles between story and blurb
+        elems.toggleClass('hidden');
+        
+        // wait a bit before allowing the next story to load
+        load_timer = window.setTimeout(function () {
+          LOADING = false;
+          window.clearTimeout(load_timer);
+          load_timer = undefined;
+        }, 1300);
+
+      })
+      .error(function (err) {
+        console.warn(err);
+        // add something so this element wont be fetched again
+        $(elem).attr('data-fetch', 'done');
+        LOADING = false;
+      });
+  }
+}
+
+
+
+function relatedWatcher (event) {
+
+  $.each($('.related-item'), function (i, val) {
+    if ($(val).attr('data-fetch') !== 'done' && !LOADING) {
+        $.inViewport(val, getThisStory);
+    }
+  });
+
+}
+
+$(window).on('load.stories scroll.stories', relatedWatcher);
+
+})(jQuery);
