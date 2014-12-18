@@ -92,13 +92,14 @@ function HeaderHeight() {
 	$('.header-push').css('padding-top', $('#HeaderContent').height() + 10);
 }
 	
-function FixMobileWidth() {
+function FixMobileWidth(mainmargin, windowwidth) {
 	/* Change the Article Holder to a variable width when in mobile */
 	if($(window).width() < 867){
-		maxwidth = parseInt($(window).width()) - parseInt($('#MainContent').css('left').replace('px',''));
-		$('#MainContent').css('max-width', maxwidth);
-		//$('#ArticleHolder').css('max-width', maxwidth);
-	}	
+		thiswidth = parseInt(windowwidth) - parseInt(mainmargin) - 1;
+		$('#MainContent').css('width', thiswidth);
+	} else {
+		$('#MainContent').css('width', '100%');
+	}
 }
 
 function BackgroundPosition(mainmargin) {
@@ -106,20 +107,21 @@ function BackgroundPosition(mainmargin) {
 	var headercontent = $('#HeaderContent').height();
 	var combinedwidth = mainmargin + parseInt(mainwidth);
 	var combinedpos = combinedwidth + 'px ' + (headercontent + 10) + 'px'
-	//console.log(combinedpos);
 	$('body, html').css('background-position', combinedpos);
 }
 
-HeaderHeight();
-SideBar();
-FixMobileWidth();
-BackgroundPosition($('#MainContent').position().left);
+function ResizeEverything(){
+	///  On Load functions to run.	
+	HeaderHeight();
+	SideBar();
+	FixMobileWidth($('#MainContent').position().left, $(window).width());
+	BackgroundPosition($('#MainContent').position().left);
+}
+
+ResizeEverything()
 
 $(window).resize(function(event) {
-	SideBar();
-	HeaderHeight();
-	FixMobileWidth();
-	BackgroundPosition($('#MainContent').position().left);
+	ResizeEverything();
 })
 
 /**  Keep the sidebar up top **/
