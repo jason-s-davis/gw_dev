@@ -11,7 +11,7 @@ var mapping728x90 = googletag.sizeMapping().
 addSize([0, 0], [[320, 50], [300, 50]]). 
 // Small Devices and larger
 addSize([768, 0], [728, 90]).
-// Small Devices and larger
+// LArge Devices and larger
 addSize([1020, 0], [[980, 50], [728, 90]]).build();
 
 // Define the GPT slot
@@ -35,6 +35,7 @@ addService(googletag.pubads());
 gptAdSlots[2] = googletag.defineSlot('/310322/a.site152.tmus', [300, 250], '300x250-ad-placeholder').
 defineSizeMapping(mapping300x250).
 addService(googletag.pubads());	
+	
 	
 // Start ad fetching
 googletag.enableServices();

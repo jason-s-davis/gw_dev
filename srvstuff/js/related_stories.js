@@ -1,5 +1,4 @@
 (function ($) {
-	
 
 /* toggleFullStory uses jQuery's getJSON call to fetch 
  * the full story content for the clicked story then 
@@ -47,35 +46,37 @@ function toggleFullStory (e) {
 
 // $('.related-item').on('click.stories', toggleFullStory);
 
-
+/** Found jquery.viewport http://www.appelsiini.net/projects/viewport
+  * which does the job of my inViewport function a bit better I think
+  **/
 // Add the inViewport function to jquery
-$.extend({
-  inViewport: function (/*elem, callback*/) {
-    var el = arguments[0], callback;
+// $.extend({
+//   inViewport: function (/*elem, callback*/) {
+//     var el = arguments[0], callback;
 
-    if (el instanceof $) {
-      el = el[0];
-    } else {
-      el = $(el)[0];
-    }
+//     if (el instanceof $) {
+//       el = el[0];
+//     } else {
+//       el = $(el)[0];
+//     }
 
-    var rect = el.getBoundingClientRect();
-    var isInViewport = (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
+//     var rect = el.getBoundingClientRect();
+//     var isInViewport = (
+//         rect.top >= 0 &&
+//         rect.left >= 0 &&
+//         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+//         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+//     );
 
-    // only element provided
-    if (arguments.length === 1) {
-      return isInViewport;
-    } else if (arguments.length === 2) {
-      callback = arguments[1];
-      return callback(el, isInViewport);
-    }
-  }
-});
+//     // only element provided
+//     if (arguments.length === 1) {
+//       return isInViewport;
+//     } else if (arguments.length === 2) {
+//       callback = arguments[1];
+//       return callback(el, isInViewport);
+//     }
+//   }
+// });
 
 
 function pageUpdate (url) {
@@ -193,6 +194,60 @@ function relatedWatcher (event) {
 
 }
 
-$(window).on('load.stories scroll.stories', relatedWatcher);
+// $(window).on('load.stories scroll.stories', relatedWatcher);
+
+/************************************************************************************/
+
+// TRY 3
+
+
+function RelatedStories (element) {
+  if (element) {
+    this.elem = element;
+    this.load();
+    this.getStory();
+  }
+}
+
+RelatedStories.prototype = {
+  loading: false,
+  load: function () {
+    this.xhr = $.getJSON('http://assets.golfweek.com/assets/ops/getpage.php?url=' + this.ref);
+  },
+  /* getStory uses jquery getJson to 
+   * fetch the story and load it into 
+   * the element
+   */
+  getStory: function () {
+    console.log(this.xhr);
+    // some function to work with the data
+    this.xhr.then(function (data) { console.log(data); }, function (err) { console.log(err); });
+  },
+  /* toggleLoader hides then shows
+   * the story during ajac load
+   *
+   */
+  toggleLoader: function () {
+
+  },
+  setUrl: function () {
+
+  }
+}
+
+var rs = new RelatedStories('stuff');
+
+
+$(window).on('load.stories scroll.stories', function () {
+  var top = $('.related-top:in-viewport')[0];
+  var elem = $(top).parent()[0];
+  console.log(top, elem);
+});
+
+
+
+
+
+
 
 })(jQuery);
