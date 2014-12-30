@@ -32,9 +32,9 @@ defineSizeMapping(mapping300x250).
 addService(googletag.pubads());
 	
 
-gptAdSlots[2] = googletag.defineSlot('/310322/a.site152.tmus', [300, 250], '300x250-ad-placeholder').
-defineSizeMapping(mapping300x250).
-addService(googletag.pubads());	
+// gptAdSlots[2] = googletag.defineSlot('/310322/a.site152.tmus', [300, 250], '300x250-ad-placeholder').
+// defineSizeMapping(mapping300x250).
+// addService(googletag.pubads());	
 	
 	
 // Start ad fetching
@@ -42,7 +42,7 @@ googletag.enableServices();
 googletag.cmd.push(function() {
 	googletag.display('header-ad-placeholder');
 	googletag.display('sidebar-ad-placeholder');
-	googletag.display('300x250-ad-placeholder');
+	// googletag.display('300x250-ad-placeholder');
 });
 });
 
