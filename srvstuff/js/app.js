@@ -90,6 +90,7 @@ function SideBar(){
 
 function HeaderHeight() {
 	$('.header-push').css('padding-top', $('#HeaderContent').height() + 10);
+	$('.modal-dialog').css('padding-top', $('#HeaderContent').height() + 10);
 }
 	
 function FixMobileWidth(mainmargin, windowwidth) {

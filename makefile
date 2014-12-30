@@ -3,7 +3,7 @@ URL="http://assets.golfweek.com/assets/js/"
 
 # Use wget to get each of these files from the server
 # should probably write a for loop for these files 
-get:
+get: clean
 	cd ./srvstuff/js; \
 	wget $(URL)ads.js; \
 	wget $(URL)app.js; \
@@ -14,4 +14,10 @@ get:
 # Maybe force clean to check that the git status is clear
 # before removing the files?
 clean:
-	rm ./srvstuff/js/*.js
+	cd ./srvstuff/js; \
+	rm *.js; \
+	echo Removed JS files.
+
+
+all:
+	get
