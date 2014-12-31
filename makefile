@@ -27,7 +27,7 @@ get: clean
 clean:
 	rm $(wildcard $(JSDIR)*.js)
 
-getjs:
+getjs: clean
 	cd $(JSDIR); \
 	for file in $(subst $(JSDIR),$(URL),$(JSFILES)); do \
 		wget $$file; \
