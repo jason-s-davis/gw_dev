@@ -1,4 +1,11 @@
 URL="http://assets.golfweek.com/assets/js/"
+EMPTY=
+JSDIR=srvstuff/js/
+JSFILES=$(wildcard $(JSDIR)*.js)
+
+.PHONY: all
+all:
+	get
 
 
 # Use wget to get each of these files from the server
@@ -11,13 +18,17 @@ get: clean
 	wget $(URL)related_stories.js; \
 	wget $(URL)scores.js
 
-# Maybe force clean to check that the git status is clear
+# Maybe force clean to check 
+# that the git status is clear
 # before removing the files?
+# phony here tells make that the 
+# clean target is not associated with a file
+.PHONY: clean
 clean:
-	cd ./srvstuff/js; \
-	rm *.js; \
-	echo Removed JS files.
+	rm $(wildcard $(JSDIR)*.js)
 
-
-all:
-	get
+getjs:
+	cd $(JSDIR); \
+	for file in $(subst $(JSDIR),$(URL),$(JSFILES)); do \
+		wget $$file; \
+	done
