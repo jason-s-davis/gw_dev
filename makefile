@@ -10,7 +10,7 @@ all:
 
 # Use wget to get each of these files from the server
 # should probably write a for loop for these files 
-get: clean
+get:
 	cd ./srvstuff/js; \
 	wget $(URL)ads.js; \
 	wget $(URL)app.js; \
