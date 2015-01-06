@@ -9,7 +9,6 @@ function RelatedStories (element) {
     }
     this.rows = $(this.elem).children('.row');
     this.top = $(this.elem).children('.related-top')[0];
-    // this.bottom = $(this.elem).children('.related-bottom')[0];
     this.load();
   }
 }
@@ -30,11 +29,16 @@ RelatedStories.prototype = {
           if ($('.related-item:in-viewport')[0] === scope.elem || $('.related-item:in-viewport')[1] === scope.elem) {
             if (window.location.href.indexOf(scope.ref) === -1) {
               scope.getAd(scope);
-              scope.updateUrl(scope.ref);
+              scope.updateUrl(scope);
             }
           }
         }
       }
+
+
+      // if ($.inArray($(scope.elem).find('div.related-story-ad')[0], $('.related-story-ad:above-the-top'))) {
+      //   scope.clearAd(scope);
+      // }
 
     });
   },
@@ -152,19 +156,27 @@ RelatedStories.prototype = {
         return percentage;
     }
   },
+  site_url: 'http://dev.golfweek.com',
   updating: false,
-  updateUrl: function (url) {
+  updateUrl: function (scope) {
     if (!RelatedStories.updating) {
-      if (typeof url !== 'undefined') {
-        if (window.location.href.indexOf(url) === -1) {
+      if (typeof scope.ref !== 'undefined') {
+        if (window.location.href.indexOf(scope.ref) === -1) {
           RelatedStories.updating = true;
           var site_url = 'http://dev.golfweek.com';
 
           // takes state object , title (ignored in ff), and url
-          window.history.pushState({}, '', site_url + url);
+          window.history.pushState({}, '', site_url + scope.ref);
           
-          // refresh ads on the page when url changes
-          googletag.pubads().refresh();
+          // refresh this ad on the page when url changes
+          if (typeof window.googletag !== 'undefined') {
+            // window.googletag.cmd.push(function() {
+              // window.googletag.pubads().refresh([scope.gptAdSlot]);
+              window.googletag.pubads().refresh([window.gptAdSlots[0]]);
+              window.googletag.pubads().refresh([window.gptAdSlots[1]]);
+            // });
+          }
+
           console.log('%c ADS RELOADED ', "color: yellow; background-color: grey");
           window.setTimeout(function () { RelatedStories.updating = false; }, 1300);
         }
@@ -178,22 +190,35 @@ RelatedStories.prototype = {
    * depends on a scope parameter
    */
   getAd: function (scope) {
-    if (!scope.adFetched && typeof googletag !== 'undefined') {
-      window.gptAdSlots = [];
-      var thisAdId = $(scope.elem).find('div.related-story-ad').attr('id');
-      // console.log('trying ad load on ' + thisAdId);
+    // if the ad has not been fetched get it
+    if (!scope.adFetched && typeof window.googletag !== 'undefined') {
+      if (typeof scope.gptAdSlot === 'undefined') {
+        scope.gptAdSlot = undefined;
+      }
+      scope.adId = $(scope.elem).find('div.related-story-ad').attr('id');
+
+      scope.adFetched = true;
+
       if (window.GWDEBUG) {
         console.log('*******\nNote:\n\tusing ROS here\n*******');
       }
-      googletag.cmd.push(function() {
-        window.gptAdSlots[window.gptAdSlots.length] = googletag.defineSlot('/310322/a.site152.tmus/ROS', [300, 250], thisAdId).
-                                          addService(googletag.pubads());
-        googletag.enableServices();
-        googletag.cmd.push(function () {
-          googletag.display(thisAdId);
-          scope.adFetched = true;     
+      window.googletag.cmd.push(function() {
+        scope.gptAdSlot = window.googletag.defineSlot('/310322/a.site152.tmus/ROS', [300, 250], scope.adId)
+                            .addService(window.googletag.pubads());
+        window.googletag.enableServices();
+        window.googletag.cmd.push(function () {
+          window.googletag.display(scope.adId);
         });
       });    
+    }
+  },
+  // clear the ad if it is above the top
+  clearAd: function (scope) {
+    // if the ad is above the top of the screen then clear the ad
+    if (typeof window.googletag !== 'undefined' && typeof scope.adId !== 'undefined') {
+      window.googletag.cmd.push(function() {
+       window.googletag.pubads().clear(scope.gptAdSlot);
+      });
     }
   },
   bitFetched: false,
@@ -230,22 +255,33 @@ RelatedStories.prototype = {
             $(scope.elem).find('a.twitter-link').attr('href', link);
       })
       .error(function (err) {
-        consol.warn(err);
+        console.warn(err);
       });
     }
   }
 }
 
+
+
+// the page url from page load
 var pageStart = window.location.href;
+// all of the related story items
 var rel_items = $('.related-item');
+// container for RelatedStory objects
 var rel_stories = [];
 
 for (var i = 0; i < rel_items.length; i++) {
   rel_stories[i] = new RelatedStories(rel_items[i]);  
 };
 
-$(window).on('scroll.stories', function () {
-  if ($('.related-item:in-viewport').length === 0) window.history.pushState({},'', pageStart);
-})
+
+if ($('.related-item').length > 0) {
+  // if none of the related stories are visible set the page url back to the original
+  $(window).on('scroll.stories', function () {
+    if ($('.related-item:in-viewport').length === 0) window.history.pushState({},'', pageStart);
+  });
+}
+
+
 
 })(jQuery);

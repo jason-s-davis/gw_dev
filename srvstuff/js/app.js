@@ -73,7 +73,7 @@ function SubNav(event){
 
 	if (event.type === 'mouseover') {
 		if (typeof navCloser !== 'undefined') {
-			return undefined;
+			return;
 		}
 	}
 
@@ -85,12 +85,18 @@ function SubNav(event){
 		target = $(event.target).attr('targ');
 	}
 
-	// remove red from item and link
+	// remove red from all items and links
 	$('#MainNav ul li').removeClass('selected');
 	$('#MainNav ul li a').removeClass('selected');
 	
+	var div;
+	if (event.target.tagName === 'A') {
+		div = $(event.target.parentNode)[0];
+	} else {
+		div = $(event.target)[0];
+	}
 	// add red background to hovered item
-	$(event.target).addClass('selected');
+	$(div).addClass('selected');
 
 	// hide all of the sub nav
 	$('#SideSubNav ul').hide();
@@ -100,6 +106,7 @@ function SubNav(event){
 	// slide the main content over to the right
 	$('#MainContent').css('left', '320px');
 	BackgroundPosition(320);
+
 }
 
 // activate SubNav on mouseover or click of main nav
@@ -111,7 +118,8 @@ function CloseSubNav (event) {
 	mainWidth = mainWidth.replace('px', '');
 	mainWidth = parseInt(mainWidth);
 	// if the nav bar is open close the sub nav
-	if (mainWidth >= 175) {
+	if (mainWidth > 175) {
+		navCloser = true;
 		subNavCloser = window.setTimeout(function () {
 			// remove red from item and link
 			$('#MainNav ul li').removeClass('selected');
@@ -120,6 +128,7 @@ function CloseSubNav (event) {
 			$('#MainContent').css('left', '175px');
 			// adjust the ad
 			BackgroundPosition(175);
+			navCloser = undefined;
 		}, 500);
 	}
 }
@@ -130,7 +139,7 @@ $('main').on('mouseenter.nav', CloseSubNav);
 
 
 function ClickMenu(event) {
-	if ($('#MainContent').css('left') == '30px') {
+	if ($('#MainContent').css('left') === '30px') {
 		$('#MainContent').css('left','175px');
 		BackgroundPosition(175);
 	} else {
@@ -195,7 +204,9 @@ function ResizeEverything(){
 	BackgroundPosition($('#MainContent').position().left);
 }
 
-ResizeEverything();
+$(window).on('load', function (e) {
+	ResizeEverything();
+});
 
 $(window).resize(function(event) {
 	ResizeEverything();

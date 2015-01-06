@@ -133,7 +133,7 @@
 
     putRankings: function () {
       var elem = document.getElementById('live_scores');
-      elem.innerHTML = elem.innerHTML + '<div class="notfound">No Tournaments Found.</div>';      
+      elem.innerHTML = elem.innerHTML + '<br/><div class="live_score_row"><div class="notfound">No Tournament Found.</div></div>';
     }
 
 	}
