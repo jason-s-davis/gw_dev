@@ -139,12 +139,16 @@ scores.factory('LS', ['$http',function ($http) {
 				player.longName = $(players[k]).attr('Fname') + " " + $(players[k]).attr('Lname');
 				player.shortName = $(players[k]).attr('FInit') + ". " + $(players[k]).attr('Lname');
 				player.pos = $(players[k]).attr('CurPos');
+				player.posSort = player.pos.replace('T', '');
 				player.today = $(players[k]).attr('CurParRel');
 				player.score = $(players[k]).attr('TournParRel');
 				player.thru = $(players[k]).attr('Thru');
 				player.rnd_one = $(players[k]).find('Rnd[Num="1"]').attr('ParRel');
-				player.rnd_two = $(players[k]).find('Rnd[Num="2"]').attr('ParRel');
+				player.rnd_one = (player.rnd_one == '')? '-' : player.rnd_one;
+				player.rnd_two = $(players[k]).find('Rnd[Num="2"]').attr('ParRel');				
+				player.rnd_two = (player.rnd_two == '')? '-' : player.rnd_two;
 				player.rnd_three = $(players[k]).find('Rnd[Num="3"]').attr('ParRel');
+				player.rnd_three = (player.rnd_three == '')? '-' : player.rnd_three;
 				if ($(tournament).attr('NumRnds') === "4") {
 					player.rnd_four = $(players[k]).find('Rnd[Num="4"]').attr('ParRel');
 				}
@@ -169,7 +173,8 @@ scores.factory('LS', ['$http',function ($http) {
 				});
 		},
 		check: function (frame, cb) {
-			if (frames[frame] === 'PGA') {
+			// checking pga tour tourn
+			if (frame === 'PGA') {
 				if (typeof pga_check === 'undefined') {
 					$http.get(frames[frame])
 						.success(function (data, status) {
@@ -180,7 +185,8 @@ scores.factory('LS', ['$http',function ($http) {
 				} else {
 					cb(pga_check);
 				}
-			} else if (frames[frame] === 'WEB') {
+			// checking web tour tourn				
+			} else if (frame === 'WEB') {
 				if (typeof web_check === 'undefined') {
 					$http.get(frames[frame])
 						.success(function (data, status) {
@@ -191,7 +197,8 @@ scores.factory('LS', ['$http',function ($http) {
 				} else {
 					cb(web_check);
 				}
-			} else if (frames[frame] === 'CHA') {
+			// checking champions tour tourn				
+			} else if (frame === 'CHA') {
 				if (typeof chmp_check === 'undefined') {
 					$http.get(frames[frame])
 						.success(function (data, status) {
@@ -220,7 +227,7 @@ lbapp.config(function ($httpProvider) {
 
 
 var tabTemplate = '<div class="tabgroup">' +
-										'<a ng-repeat="link in links" class="tab tablink" ng-href="#{{link.url}}" ng-class="{\'active\': link.tab, \'no-tournament\': link.live}">' +
+										'<a ng-repeat="link in links" class="tab tablink" ng-href="#{{link.url}}" ng-class="{\'active\': link.tab, \'disabled\': link.live}">' +
 											'<span class="tabname text-justify">{{link.name}}</span>' +
 								  	'</a>' +
 								  '</div>' +
@@ -237,20 +244,21 @@ var tournDataTemplate = '<div ng-if="!err" class="tournInfo">' +
 												'</div>'+
 												'<div class="clearfix"></div>';
 
-var liveScoreHeader = '<div class="lblive_scores">' +
-												'<div ng-if="!err" class="lblive_score_row lbrow thead">' +
-													'<div class="position">pos</div>' +
-													'<div class="player visible-lg">name</div>' +
-													'<div class="player hidden-lg">name</div>' +
-													'<div class="score">score</div>' +
-													'<div class="thru">thru</div>' +
-													'<div class="today">today</div>' +
-													'<div class="rnd1 visible-lg">rnd1</div>' +
-													'<div class="rnd2 visible-lg">rnd2</div>' +
-													'<div class="rnd3 visible-lg">rnd3</div>' +
-													'<div ng-if="player.rnd_four" class="rnd4 visible-lg">rnd4</div>' +
-												'</div>' +
-											'</div>';
+
+var liveScoreHeader = '<div class="lblive_scores table-responsive">' +
+												'<table ng-if="!err" class="table table-striped">' +
+													'<thead class="lbthead">' +
+													'<th class="position">pos</th>' +
+													'<th class="player visible-lg">name</th>' +
+													'<th class="player hidden-lg">name</th>' +
+													'<th class="score">score</th>' +
+													'<th class="thru">thru</th>' +
+													'<th class="today">today</th>' +
+													'<th class="rnd1 visible-lg">rnd1</th>' +
+													'<th class="rnd2 visible-lg">rnd2</th>' +
+													'<th class="rnd3 visible-lg">rnd3</th>' +
+													'<th ng-if="player.rnd_four" class="rnd4 visible-lg">rnd4</th>' +
+													'<thead>';
 
 
 var ad = function () {
@@ -267,39 +275,37 @@ var ad = function () {
 }
 
 
-
-
 var proTemplate = tournDataTemplate +
+									'<div ng-if="err" class="errmsg">{{err}}</div>' +
 									liveScoreHeader +
-									'<div class="lblive_scores">' +
-										'<div class="lblive_score_row lbrow" ng-if="players" ng-repeat="player in players">' + 
+									'<tbody>' +
+										'<tr class="lblive_score_row lbrow" ng-if="players" ng-repeat="player in players">' + 
+											'<td class="position">{{player.pos}}</td>' +
+											'<td class="player visible-lg"><nobr>{{player.longName}}</nobr></td>' +
+											'<td class="player hidden-lg"><nobr>{{player.shortName}}</nobr></td>' +
+											'<td class="score">{{player.score}}</td>' +
+											'<td class="thru">{{player.thru}}</td>' +
+											'<td class="today">{{player.today}}</td>' +
+											'<td class="rnd1 visible-lg">{{player.rnd_one}}</td>' +
+											'<td class="rnd2 visible-lg">{{player.rnd_two}}</td>' +
+											'<td class="rnd3 visible-lg">{{player.rnd_three}}</td>' +
+											'<td player.rnd_four" class="rnd4 visible-lg">{{player.rnd_four}}</td>' +
+											// '<td colspan=8 ng-if="$index % 9 == 0 && $index > 0 && $index < 20">' +
+											// 	'<div id="ad-{{$index}}" class="">' + ad() + '</div>' +
+											// '</td>' +
+	    					  	'</tr>' +
+	    					  '</tbody>' +
+	    					 '</table>';									
 
-											'<div class="position">{{player.pos}}</div>' +
-											'<div class="player visible-lg">{{player.longName}}</div>' +
-											'<div class="player hidden-lg">{{player.shortName}}</div>' +
-											'<div class="score">{{player.score}}</div>' +
-											'<div class="thru">{{player.thru}}</div>' +
-											'<div class="today">{{player.today}}</div>' +
-											'<div class="rnd1 visible-lg">{{player.rnd_one}}</div>' +
-											'<div class="rnd2 visible-lg">{{player.rnd_two}}</div>' +
-											'<div class="rnd3 visible-lg">{{player.rnd_three}}</div>' +
-											'<div ng-if="player.rnd_four" class="rnd4 visible-lg">{{player.rnd_four}}</div>' +
-	    					  	'</div>' +
-	    					  	'<div ng-if="$index % 9 == 0 && $index > 0 && $index < 20" class="lbads live_score_row lbrow">' +
-	    					  		'<div id="ad-{{$index}}">' + ad() + '</div>' +
-	    					  	'</div>' +
-	    					  '</div>' +
-									'<div ng-if="err" class="errmsg">{{err}}</div>';
 
-
-var gsTournTemplate = '<div ng-if="tournaments" ng-repeat="tournament in tournaments">' +
+var gsTournTemplate = '<div ng-if="tournaments" ng-repeat="tournament in tournaments" class="text-center">' +
 												'<a ng-href="http://golfstat.golfweek.com/players/K/{{tournament.TOURNAMENT_ID}}/{{tournament.TOURNAMENT_DESCR}}">' +
 													'<div class="btn btn-default">' +
 														'<span>{{tournament.TOURNAMENT_DESCR}}</span><br/>' +
 														'<small>{{tournament.START_DATE | date:"mediumDate"}}</small>' +
 													'</div>' +
 												'</a>' +
-											'</div>' +
+											'</div><br/>' +
 											'<div ng-if="!tournaments">nope</div>';
 
 var gsTeamLBTemplate = '';
@@ -354,11 +360,6 @@ lbapp.config(['$routeProvider',
 				template: gsTeamLBTemplate
 			})
 	}
-],
-['$locationProvider', 
-function($locationProvider) {
-  $locationProvider.html5Mode = true;
-}
 ])
 
 
